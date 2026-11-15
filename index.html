@@ -811,6 +811,151 @@
         }
       }
 
+      /* Electric Vehicle Bay Section */
+      .ev-section {
+        border-top: 1px solid var(--border-subtle);
+        background-color: var(--bg-canvas);
+      }
+
+      .ev-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+        gap: clamp(1.5rem, 3.5vw, 2.75rem);
+        align-items: stretch;
+      }
+
+      .ev-bay-panel {
+        background-color: var(--bg-petrol);
+        color: var(--text-on-petrol);
+        padding: 1.75rem;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--bg-petrol-deep);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1.35rem;
+      }
+
+      .ev-bay-head h3 {
+        color: var(--text-on-petrol);
+        font-size: 1.8rem;
+        line-height: 1.05;
+        margin-bottom: 0.55rem;
+      }
+
+      .ev-bay-head p {
+        color: var(--text-muted-on-petrol);
+        font-size: 0.95rem;
+      }
+
+      .ev-models-line {
+        font-size: 0.84rem;
+        line-height: 1.5;
+        color: var(--accent-yellow);
+        font-weight: 500;
+        padding-top: 0.75rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      .ev-spec-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .ev-spec-table th,
+      .ev-spec-table td {
+        padding: 0.6rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+        font-size: 0.92rem;
+      }
+
+      .ev-spec-table th {
+        text-align: left;
+        font-weight: 500;
+        color: var(--text-muted-on-petrol);
+      }
+
+      .ev-spec-table td {
+        text-align: right;
+        font-weight: 600;
+        color: var(--text-on-petrol);
+      }
+
+      .ev-spec-table tr:last-child th,
+      .ev-spec-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .ev-selector-block {
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+        padding-top: 0.9rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      .ev-selector-label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--text-muted-on-petrol);
+      }
+
+      .ev-pack-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+      }
+
+      .ev-pack-btn {
+        min-height: 38px;
+        padding: 0.35rem 0.75rem;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background-color: rgba(255, 255, 255, 0.06);
+        color: var(--text-on-petrol);
+        border-radius: var(--radius-sm);
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: background-color 140ms ease, color 140ms ease, border-color 140ms ease;
+      }
+
+      .ev-pack-btn:hover {
+        background-color: rgba(255, 255, 255, 0.14);
+      }
+
+      .ev-pack-btn.is-active {
+        background-color: var(--accent-yellow);
+        color: var(--text-on-yellow);
+        border-color: var(--accent-yellow);
+      }
+
+      .ev-rec-note {
+        font-size: 0.9rem;
+        line-height: 1.45;
+        color: var(--text-on-petrol);
+      }
+
+      .ev-ledger {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        border-top: 2px solid var(--border-strong);
+        border-left: 1px solid var(--border-subtle);
+        background-color: var(--bg-surface);
+      }
+
+      @media (max-width: 960px) {
+        .ev-layout {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .ev-ledger {
+          grid-template-columns: 1fr;
+        }
+      }
+
       /* Why Us & Opening Hours Split */
       .why-hours-section {
         border-top: 1px solid var(--border-subtle);
@@ -942,6 +1087,172 @@
 
       @media (max-width: 900px) {
         .why-hours-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Time Slots Section */
+      .slots-section {
+        border-bottom: 1px solid var(--border-subtle);
+      }
+
+      .slots-controls {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        padding: 1rem 1.25rem;
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-md);
+      }
+
+      .slots-date-picker-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .slots-date-input {
+        width: auto;
+        min-width: 170px;
+        min-height: 42px;
+      }
+
+      .slots-day-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+        padding: 0.2rem;
+        background-color: var(--bg-canvas);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-sm);
+      }
+
+      .slots-day-btn {
+        min-height: 36px;
+        padding: 0.3rem 0.75rem;
+        background: transparent;
+        border: none;
+        border-radius: var(--radius-sm);
+        color: var(--text-secondary);
+        font-weight: 500;
+        font-size: 0.88rem;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+
+      .slots-day-btn.is-active {
+        background-color: var(--bg-petrol);
+        color: var(--text-on-petrol);
+        font-weight: 600;
+      }
+
+      .slots-day-status {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+      }
+
+      .slots-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        border-top: 2px solid var(--border-strong);
+        border-left: 1px solid var(--border-subtle);
+        background-color: var(--bg-surface);
+      }
+
+      .slot-card {
+        border: none;
+        border-right: 1px solid var(--border-subtle);
+        border-bottom: 1px solid var(--border-subtle);
+        background: transparent;
+        padding: 1.35rem 1.25rem;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0.9rem;
+        cursor: pointer;
+        color: var(--text-primary);
+        transition: background-color 140ms ease;
+      }
+
+      .slot-card:hover:not(:disabled) {
+        background-color: var(--bg-surface-alt);
+      }
+
+      .slot-card.is-selected {
+        background-color: var(--bg-surface-alt);
+        box-shadow: inset 0 -4px 0 0 var(--accent-yellow);
+      }
+
+      .slot-card:disabled {
+        opacity: 0.58;
+        cursor: not-allowed;
+      }
+
+      .slot-card-top {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 0.75rem;
+        width: 100%;
+      }
+
+      .slot-time {
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: 700;
+        font-size: 1.45rem;
+        line-height: 1.1;
+        color: var(--text-primary);
+      }
+
+      .slot-window-name {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+        margin-bottom: 0.2rem;
+      }
+
+      .slot-window-note {
+        font-size: 0.86rem;
+        color: var(--text-muted);
+      }
+
+      .slot-selected-bar {
+        margin-top: 1.25rem;
+        padding: 1rem 1.25rem;
+        background-color: var(--bg-petrol);
+        color: var(--text-on-petrol);
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius-md);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem 1.25rem;
+      }
+
+      .slot-selected-text {
+        font-size: 0.95rem;
+      }
+
+      .slot-selected-text strong {
+        color: var(--accent-yellow);
+      }
+
+      @media (max-width: 900px) {
+        .slots-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 560px) {
+        .slots-grid {
           grid-template-columns: 1fr;
         }
       }
@@ -1109,9 +1420,600 @@
         font-size: 0.88rem;
         color: var(--text-muted-on-petrol);
       }
+
+      .footer-admin-link {
+        color: var(--accent-yellow);
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .footer-admin-link:hover {
+        text-decoration: underline;
+      }
+
+      .confirmation-banner.is-error {
+        background-color: var(--error-bg);
+        color: var(--error-text);
+        border-color: var(--error-border);
+      }
+
+      /* Admin Mode Visibility */
+      body.is-admin-mode #public-site {
+        display: none;
+      }
+
+      #admin-shell {
+        display: none;
+        min-height: 100vh;
+        background-color: var(--bg-canvas);
+      }
+
+      body.is-admin-mode #admin-shell {
+        display: block;
+      }
+
+      /* Admin Login Screen */
+      .admin-auth-wrap {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+      }
+
+      .admin-auth-card {
+        width: 100%;
+        max-width: 440px;
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+      }
+
+      .admin-auth-head {
+        background-color: var(--bg-petrol);
+        color: var(--text-on-petrol);
+        padding: 1.35rem 1.5rem;
+        border-bottom: 1px solid var(--border-strong);
+      }
+
+      .admin-auth-head h1 {
+        color: var(--text-on-petrol);
+        font-size: 1.75rem;
+        margin-bottom: 0.2rem;
+      }
+
+      .admin-auth-head p {
+        font-size: 0.9rem;
+        color: var(--text-muted-on-petrol);
+      }
+
+      .admin-auth-body {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .admin-auth-footer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid var(--border-subtle);
+      }
+
+      .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        min-height: 40px;
+        padding: 0.45rem 0.95rem;
+        background-color: transparent;
+        color: var(--text-primary);
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius-sm);
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        text-decoration: none;
+        white-space: nowrap;
+        flex-shrink: 0;
+        transition: background-color 140ms ease;
+      }
+
+      .btn-outline:hover {
+        background-color: var(--bg-surface-alt);
+      }
+
+      .btn-sm {
+        min-height: 36px;
+        padding: 0.3rem 0.7rem;
+        font-size: 0.84rem;
+      }
+
+      .btn-danger-outline {
+        color: var(--error-text);
+        border-color: var(--error-border);
+      }
+
+      .btn-danger-outline:hover {
+        background-color: var(--error-bg);
+      }
+
+      /* Admin Dashboard Workspace Layout */
+      .admin-workspace {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 248px minmax(0, 1fr);
+      }
+
+      .admin-sidebar {
+        background-color: var(--bg-petrol-deep);
+        color: var(--text-on-petrol);
+        border-right: 1px solid var(--border-strong);
+        display: flex;
+        flex-direction: column;
+        padding: 1.25rem 1rem;
+        gap: 1.5rem;
+      }
+
+      .admin-sidebar-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding-inline: 0.5rem;
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: 700;
+        font-size: 1.4rem;
+        color: var(--text-on-petrol);
+      }
+
+      .admin-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        flex: 1;
+      }
+
+      .admin-nav-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+        width: 100%;
+        min-height: 42px;
+        padding: 0.55rem 0.75rem;
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: var(--radius-sm);
+        color: var(--text-muted-on-petrol);
+        font-weight: 500;
+        font-size: 0.94rem;
+        text-align: left;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: background-color 140ms ease, color 140ms ease;
+      }
+
+      .admin-nav-btn:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+        color: var(--text-on-petrol);
+      }
+
+      .admin-nav-btn.is-active {
+        background-color: var(--accent-yellow);
+        color: var(--text-on-yellow);
+        font-weight: 600;
+      }
+
+      .admin-nav-count {
+        font-size: 0.82rem;
+        font-weight: 700;
+        opacity: 0.9;
+      }
+
+      .admin-sidebar-foot {
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .admin-main {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+      }
+
+      .admin-topbar {
+        background-color: var(--bg-surface);
+        border-bottom: 1px solid var(--border-subtle);
+        padding: 0.85rem 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem 1.25rem;
+      }
+
+      .admin-breadcrumb {
+        font-size: 0.92rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+      }
+
+      .admin-topbar-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.65rem;
+      }
+
+      .admin-user-email {
+        font-size: 0.86rem;
+        color: var(--text-muted);
+      }
+
+      .admin-content {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      /* KPI Strip */
+      .kpi-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border-top: 2px solid var(--border-strong);
+        border-left: 1px solid var(--border-subtle);
+        background-color: var(--bg-surface);
+      }
+
+      .kpi-cell {
+        padding: 1.1rem 1.25rem;
+        border-right: 1px solid var(--border-subtle);
+        border-bottom: 1px solid var(--border-subtle);
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+
+      .kpi-label {
+        font-size: 0.84rem;
+        font-weight: 600;
+        color: var(--text-muted);
+      }
+
+      .kpi-value {
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 1.05;
+        color: var(--text-primary);
+      }
+
+      .kpi-sub {
+        font-size: 0.82rem;
+        color: var(--text-secondary);
+      }
+
+      /* Admin Toolbar & Filters */
+      .admin-panel-box {
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+      }
+
+      .admin-panel-head {
+        padding: 0.95rem 1.25rem;
+        border-bottom: 1px solid var(--border-subtle);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem 1rem;
+      }
+
+      .admin-panel-head h2 {
+        font-size: 1.4rem;
+      }
+
+      .filter-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+        padding: 0.2rem;
+        background-color: var(--bg-canvas);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-sm);
+      }
+
+      .filter-tab {
+        min-height: 36px;
+        padding: 0.3rem 0.7rem;
+        background: transparent;
+        border: none;
+        border-radius: var(--radius-sm);
+        color: var(--text-secondary);
+        font-weight: 500;
+        font-size: 0.85rem;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+
+      .filter-tab.is-active {
+        background-color: var(--bg-petrol);
+        color: var(--text-on-petrol);
+        font-weight: 600;
+      }
+
+      .admin-toolbar {
+        padding: 0.85rem 1.25rem;
+        border-bottom: 1px solid var(--border-subtle);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+      }
+
+      .admin-search-input {
+        min-width: 240px;
+        max-width: 340px;
+        flex: 1;
+        min-height: 40px;
+        padding: 0.45rem 0.75rem;
+        background-color: var(--bg-canvas);
+        color: var(--text-primary);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-sm);
+      }
+
+      /* High-density Data Table */
+      .table-scroll {
+        width: 100%;
+        overflow-x: auto;
+      }
+
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+
+      .data-table th {
+        text-align: left;
+        padding: 0.65rem 1rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        border-bottom: 1px solid var(--border-subtle);
+        background-color: var(--bg-canvas);
+        white-space: nowrap;
+      }
+
+      .data-table td {
+        padding: 0.65rem 1rem;
+        border-bottom: 1px solid var(--border-subtle);
+        vertical-align: middle;
+        color: var(--text-primary);
+      }
+
+      .data-table tbody tr:hover {
+        background-color: var(--bg-surface-alt);
+      }
+
+      .data-table tbody tr:last-child td {
+        border-bottom: none;
+      }
+
+      .num-col {
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      .table-sub {
+        display: block;
+        font-size: 0.82rem;
+        color: var(--text-muted);
+      }
+
+      .status-tag {
+        display: inline-block;
+        padding: 0.15rem 0.45rem;
+        font-size: 0.78rem;
+        font-weight: 600;
+        border-radius: 2px;
+        border: 1px solid var(--border-subtle);
+        white-space: nowrap;
+      }
+
+      .status-Pending {
+        background-color: #fef6d8;
+        color: #714b00;
+        border-color: #e6c245;
+      }
+
+      .status-Confirmed {
+        background-color: #e3f1f6;
+        color: #0e3a4a;
+        border-color: #9dc5d4;
+      }
+
+      .status-InProgress {
+        background-color: #fff3e0;
+        color: #7c3a00;
+        border-color: #f0b875;
+      }
+
+      .status-Completed {
+        background-color: var(--success-bg);
+        color: var(--success-text);
+        border-color: var(--success-border);
+      }
+
+      .status-Cancelled {
+        background-color: var(--error-bg);
+        color: var(--error-text);
+        border-color: var(--error-border);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .status-Pending {
+          background-color: #3a2e08;
+          color: #fcd34d;
+          border-color: #856404;
+        }
+        .status-Confirmed {
+          background-color: #0e303d;
+          color: #7dd3fc;
+          border-color: #1f5c73;
+        }
+        .status-InProgress {
+          background-color: #3d2409;
+          color: #fdba74;
+          border-color: #9a520c;
+        }
+      }
+
+      .row-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+        white-space: nowrap;
+      }
+
+      .inline-select {
+        min-height: 36px;
+        padding: 0.25rem 0.5rem;
+        background-color: var(--bg-canvas);
+        color: var(--text-primary);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-sm);
+        font-size: 0.84rem;
+      }
+
+      .inline-form-drawer {
+        padding: 1rem 1.25rem;
+        border-bottom: 1px solid var(--border-subtle);
+        background-color: var(--bg-canvas);
+        display: none;
+      }
+
+      .inline-form-drawer.is-open {
+        display: block;
+      }
+
+      .inline-form-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 0.85rem;
+        align-items: end;
+      }
+
+      .overview-split {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+      }
+
+      .empty-state {
+        padding: 2.25rem 1.5rem;
+        text-align: center;
+        color: var(--text-muted);
+      }
+
+      .empty-state p {
+        margin-bottom: 0.85rem;
+      }
+
+      .sql-code-box {
+        width: 100%;
+        min-height: 290px;
+        padding: 1rem;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.82rem;
+        line-height: 1.5;
+        background-color: var(--bg-canvas);
+        color: var(--text-primary);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-sm);
+        resize: vertical;
+      }
+
+      .setup-notice {
+        padding: 1rem 1.25rem;
+        background-color: var(--error-bg);
+        color: var(--error-text);
+        border: 1px solid var(--error-border);
+        border-radius: var(--radius-sm);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+      }
+
+      .setup-status-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        padding: 1.25rem;
+      }
+
+      .setup-status-item {
+        padding: 0.9rem 1rem;
+        border: 1px solid var(--border-subtle);
+        background-color: var(--bg-canvas);
+        border-radius: var(--radius-sm);
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+
+      @media (max-width: 980px) {
+        .admin-workspace {
+          grid-template-columns: 1fr;
+        }
+        .admin-sidebar {
+          border-right: none;
+          border-bottom: 1px solid var(--border-strong);
+          padding: 0.85rem 1rem;
+          gap: 0.85rem;
+        }
+        .admin-nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+        .admin-nav-btn {
+          width: auto;
+        }
+        .kpi-strip {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .overview-split,
+        .setup-status-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .kpi-strip {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
   <body>
+    <div id="public-site">
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header class="site-header">
@@ -1137,8 +2039,10 @@
 
         <nav class="site-nav" aria-label="Primary">
           <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#ev-care">EV care</a>
           <a class="nav-link" href="#why-us">Why us</a>
-          <a class="nav-link" href="#hours">Hours</a>
+          <a class="nav-link" href="#time-slots">Time slots</a>
+          <a class="nav-link" href="#admin" data-open-admin="true">Admin</a>
         </nav>
 
         <div class="header-actions">
@@ -1163,8 +2067,10 @@
       <div class="mobile-drawer" id="mobile-drawer">
         <div class="mobile-drawer-links">
           <a href="#services">Services</a>
+          <a href="#ev-care">EV care</a>
           <a href="#why-us">Why us</a>
-          <a href="#hours">Hours</a>
+          <a href="#time-slots">Time slots</a>
+          <a href="#admin" data-open-admin="true">Admin</a>
         </div>
       </div>
     </header>
@@ -1310,6 +2216,67 @@
         </div>
       </section>
 
+      <section class="section-block ev-section" id="ev-care">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Electric vehicle bay</h2>
+            <p class="section-lead">
+              Dedicated high-voltage safe bay for Lucknow EV drivers—battery health scans, thermal coolant flushes, regenerative brake care, and reduction gear servicing without dealership waitlists.
+            </p>
+          </div>
+
+          <div class="ev-layout">
+            <aside class="ev-bay-panel" aria-labelledby="ev-bay-heading">
+              <div class="ev-bay-head">
+                <h3 id="ev-bay-heading">High-voltage ready workshop</h3>
+                <p>
+                  Every EV check-in starts with a BMS fault scan, 12V auxiliary battery load test, and high-voltage isolation check before any work begins.
+                </p>
+                <p class="ev-models-line">
+                  Tata Nexon EV · Punch EV · Tiago EV · MG ZS EV · Mahindra XUV400 · BYD Atto 3
+                </p>
+              </div>
+
+              <table class="ev-spec-table">
+                <tbody>
+                  <tr>
+                    <th scope="row">Safety tooling</th>
+                    <td class="tabular">1,000V IEC 60900 insulated</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">12V aux &amp; SoH report</th>
+                    <td>Included on every visit</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Dead-battery rescue</th>
+                    <td class="tabular">Flatbed within 8 km</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="ev-selector-block">
+                <span class="ev-selector-label">Choose your EV platform for a tailored check</span>
+                <div class="ev-pack-tabs" role="group" aria-label="EV vehicle platform selector">
+                  <button type="button" class="ev-pack-btn is-active" data-ev-platform="tata">Tata / Mahindra EV</button>
+                  <button type="button" class="ev-pack-btn" data-ev-platform="mg">MG / Hyundai EV</button>
+                  <button type="button" class="ev-pack-btn" data-ev-platform="byd">BYD / Fleet EV</button>
+                </div>
+                <p class="ev-rec-note" id="ev-rec-note">
+                  Recommended for Nexon EV, Tiago EV &amp; XUV400: HV battery health &amp; SoH scan before summer or long highway trips.
+                </p>
+                <div>
+                  <button type="button" class="btn-primary" id="ev-quick-book-btn">
+                    Book EV bay check
+                  </button>
+                </div>
+              </div>
+            </aside>
+
+            <div class="ev-ledger" id="ev-grid"></div>
+          </div>
+        </div>
+      </section>
+
       <section class="section-block why-hours-section" id="why-us">
         <div class="container why-hours-grid">
           <div>
@@ -1384,6 +2351,45 @@
         </div>
       </section>
 
+      <section class="section-block slots-section" id="time-slots">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Workshop bay time slots</h2>
+            <p class="section-lead">
+              Choose a drop-off window for your preferred date. Mon–Fri bays run until 6:30 pm, Saturdays close at 5:00 pm, and Sundays are closed.
+            </p>
+          </div>
+
+          <div class="slots-controls">
+            <div class="slots-date-picker-wrap">
+              <label class="field-label" for="slots-date">Select date</label>
+              <input
+                type="date"
+                id="slots-date"
+                class="field-control slots-date-input tabular"
+              />
+              <div class="slots-day-tabs" aria-label="Quick date presets">
+                <button type="button" class="slots-day-btn" data-slot-day="today">Today</button>
+                <button type="button" class="slots-day-btn" data-slot-day="tomorrow">Tomorrow</button>
+                <button type="button" class="slots-day-btn" data-slot-day="monday">Next Monday</button>
+              </div>
+            </div>
+            <span class="slots-day-status tabular" id="slots-day-status"></span>
+          </div>
+
+          <div class="slots-grid" id="slots-grid"></div>
+
+          <div class="slot-selected-bar" id="slot-selected-bar">
+            <div class="slot-selected-text" id="slot-selected-text">
+              Select an available drop-off window above to lock it into your booking request.
+            </div>
+            <a class="btn-primary" href="#booking" id="slot-proceed-btn" data-focus-booking="true">
+              Book selected slot
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section class="section-block" id="booking">
         <div class="container booking-layout">
           <div class="booking-aside">
@@ -1392,7 +2398,7 @@
               Reserve a bay at our Gomti Nagar garage. No advance payment is needed—pay only after inspection and completion.
             </p>
             <ul class="booking-checklist">
-              <li>1. Pick your service and preferred drop-off date.</li>
+              <li>1. Pick your service, preferred date, and drop-off time slot.</li>
               <li>2. Our service advisor calls within 30 minutes during open hours.</li>
               <li>3. Request free pick-up in the message box if you are within 8 km.</li>
             </ul>
@@ -1454,6 +2460,21 @@
                   <span class="field-error" id="err-date" aria-live="polite"></span>
                 </div>
 
+                <div class="field-group">
+                  <label class="field-label" for="book-slot">Preferred time slot</label>
+                  <select class="field-control tabular" id="book-slot" name="timeSlot" required></select>
+                  <span class="field-error" id="err-slot" aria-live="polite"></span>
+                </div>
+
+                <div class="field-group">
+                  <label class="field-label" for="book-size">Car size</label>
+                  <select class="field-control" id="book-size" name="carSize">
+                    <option value="1">Hatchback (×1)</option>
+                    <option value="1.2">Sedan (×1.2)</option>
+                    <option value="1.5">SUV / MUV (×1.5)</option>
+                  </select>
+                </div>
+
                 <div class="field-group span-full">
                   <label class="field-label" for="book-service">Service needed</label>
                   <select class="field-control" id="book-service" name="service" required></select>
@@ -1472,7 +2493,7 @@
               </div>
 
               <div class="form-actions">
-                <button type="submit" class="btn-primary">Request booking</button>
+                <button type="submit" class="btn-primary" id="book-submit-btn">Request booking</button>
                 <span class="form-hint">Estimate confirmed after physical inspection.</span>
               </div>
 
@@ -1505,14 +2526,349 @@
         </div>
         <div class="footer-bottom">
           <span>© 2026 Gearhouse Garage, Lucknow. All rights reserved.</span>
-          <span>Mon–Fri 9:00 am – 7:00 pm · Sat 9:00 am – 5:00 pm · Sun closed</span>
+          <span>
+            Mon–Fri 9:00 am – 7:00 pm · Sat 9:00 am – 5:00 pm · Sun closed ·
+            <a href="#admin" class="footer-admin-link" data-open-admin="true">Admin portal</a>
+          </span>
         </div>
       </div>
     </footer>
+    </div>
+
+    <!-- Admin Panel Shell -->
+    <section id="admin-shell" aria-label="Workshop Admin Console">
+      <!-- Auth Gate -->
+      <div class="admin-auth-wrap" id="admin-auth-view">
+        <div class="admin-auth-card">
+          <div class="admin-auth-head">
+            <h1 id="auth-heading">Workshop admin sign in</h1>
+            <p>Sign in with your Supabase account to manage bookings and inventory sales.</p>
+          </div>
+          <form class="admin-auth-body" id="admin-auth-form" novalidate>
+            <div class="field-group">
+              <label class="field-label" for="auth-email">Admin email</label>
+              <input
+                class="field-control"
+                type="email"
+                id="auth-email"
+                autocomplete="email"
+                placeholder="owner@gearhousegarage.in"
+                required
+              />
+            </div>
+            <div class="field-group">
+              <label class="field-label" for="auth-password">Password</label>
+              <input
+                class="field-control"
+                type="password"
+                id="auth-password"
+                autocomplete="current-password"
+                placeholder="Enter password (min 6 chars)"
+                required
+              />
+            </div>
+            <div class="confirmation-banner" id="auth-feedback" role="status" aria-live="polite"></div>
+            <button type="submit" class="btn-primary" id="auth-submit-btn">Sign in to admin</button>
+            <div class="admin-auth-footer">
+              <button type="button" class="btn-secondary-link" id="auth-mode-toggle">
+                Create admin account
+              </button>
+              <a href="#top" class="btn-outline btn-sm" data-close-admin="true">Back to website</a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Authenticated Workspace -->
+      <div class="admin-workspace" id="admin-workspace-view" style="display: none;">
+        <aside class="admin-sidebar">
+          <div class="admin-sidebar-brand">
+            <svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <rect width="32" height="32" rx="3" fill="#0E3A4A" />
+              <path
+                d="M16 6.5L18.2 8.2L20.9 7.6L21.9 10.2L24.5 11.2L23.9 13.9L25.6 16L23.9 18.1L24.5 20.8L21.9 21.8L20.9 24.4L18.2 23.8L16 25.5L13.8 23.8L11.1 24.4L10.1 21.8L7.5 20.8L8.1 18.1L6.4 16L8.1 13.9L7.5 11.2L10.1 10.2L11.1 7.6L13.8 8.2L16 6.5Z"
+                stroke="#F5B800"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+              />
+              <circle cx="16" cy="16" r="3.6" fill="#F5B800" />
+            </svg>
+            <span>Gearhouse Admin</span>
+          </div>
+
+          <nav class="admin-nav" aria-label="Admin sections">
+            <button type="button" class="admin-nav-btn is-active" data-admin-tab="overview">
+              <span>Overview</span>
+            </button>
+            <button type="button" class="admin-nav-btn" data-admin-tab="bookings">
+              <span>All bookings</span>
+              <span class="admin-nav-count tabular" id="nav-count-all">0</span>
+            </button>
+            <button type="button" class="admin-nav-btn" data-admin-tab="pending">
+              <span>Pending bookings</span>
+              <span class="admin-nav-count tabular" id="nav-count-pending">0</span>
+            </button>
+            <button type="button" class="admin-nav-btn" data-admin-tab="inventory">
+              <span>Inventory &amp; sales</span>
+            </button>
+            <button type="button" class="admin-nav-btn" data-admin-tab="setup">
+              <span>Supabase setup</span>
+            </button>
+          </nav>
+
+          <div class="admin-sidebar-foot">
+            <a href="#top" class="admin-nav-btn" data-close-admin="true">Public website</a>
+          </div>
+        </aside>
+
+        <div class="admin-main">
+          <header class="admin-topbar">
+            <div class="admin-breadcrumb" id="admin-breadcrumb">
+              Gearhouse Garage / Admin / Overview
+            </div>
+            <div class="admin-topbar-actions">
+              <span class="admin-user-email" id="admin-user-email"></span>
+              <button type="button" class="btn-outline btn-sm" id="admin-refresh-btn">Refresh data</button>
+              <button type="button" class="btn-outline btn-sm" id="admin-signout-btn">Sign out</button>
+            </div>
+          </header>
+
+          <div class="admin-content">
+            <div class="setup-notice" id="schema-warning-banner" style="display: none;">
+              <span>
+                Supabase tables (<code>bookings</code>, <code>inventory_items</code>, <code>inventory_sales</code>) were not found in your project yet. Run the SQL script in <strong>Supabase setup</strong> to activate storage.
+              </span>
+              <button type="button" class="btn-primary btn-sm" id="go-to-setup-btn">Open Supabase setup</button>
+            </div>
+
+            <!-- Overview Tab -->
+            <div id="tab-overview" class="admin-tab-pane">
+              <div class="kpi-strip">
+                <div class="kpi-cell">
+                  <span class="kpi-label">Pending bookings</span>
+                  <span class="kpi-value tabular" id="kpi-pending">0</span>
+                  <span class="kpi-sub">Awaiting slot confirmation</span>
+                </div>
+                <div class="kpi-cell">
+                  <span class="kpi-label">Total bookings</span>
+                  <span class="kpi-value tabular" id="kpi-total-bookings">0</span>
+                  <span class="kpi-sub">Active &amp; completed appointments</span>
+                </div>
+                <div class="kpi-cell">
+                  <span class="kpi-label">Total revenue</span>
+                  <span class="kpi-value tabular" id="kpi-revenue">₹0</span>
+                  <span class="kpi-sub">Services + parts sales</span>
+                </div>
+                <div class="kpi-cell">
+                  <span class="kpi-label">Low-stock parts</span>
+                  <span class="kpi-value tabular" id="kpi-low-stock">0</span>
+                  <span class="kpi-sub">Items at or below reorder level</span>
+                </div>
+              </div>
+
+              <div class="overview-split" style="margin-top: 1.5rem;">
+                <div class="admin-panel-box">
+                  <div class="admin-panel-head">
+                    <h2>Pending queue</h2>
+                    <button type="button" class="btn-outline btn-sm" data-switch-tab="pending">View all</button>
+                  </div>
+                  <div class="table-scroll" id="overview-pending-list"></div>
+                </div>
+
+                <div class="admin-panel-box">
+                  <div class="admin-panel-head">
+                    <h2>Recent parts sales</h2>
+                    <button type="button" class="btn-outline btn-sm" data-switch-tab="inventory">Manage stock</button>
+                  </div>
+                  <div class="table-scroll" id="overview-sales-list"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bookings / Pending Tab -->
+            <div id="tab-bookings" class="admin-tab-pane" style="display: none;">
+              <div class="admin-panel-box">
+                <div class="admin-panel-head">
+                  <h2 id="bookings-panel-title">Workshop bookings</h2>
+                  <div style="display: flex; flex-wrap: wrap; gap: 0.65rem; align-items: center;">
+                    <div class="filter-tabs" id="booking-status-filters">
+                      <button type="button" class="filter-tab is-active" data-status-filter="All">All</button>
+                      <button type="button" class="filter-tab" data-status-filter="Pending">Pending</button>
+                      <button type="button" class="filter-tab" data-status-filter="Confirmed">Confirmed</button>
+                      <button type="button" class="filter-tab" data-status-filter="In Progress">In progress</button>
+                      <button type="button" class="filter-tab" data-status-filter="Completed">Completed</button>
+                      <button type="button" class="filter-tab" data-status-filter="Cancelled">Cancelled</button>
+                    </div>
+                    <button type="button" class="btn-primary btn-sm" id="toggle-walkin-btn">Add booking</button>
+                  </div>
+                </div>
+
+                <form class="inline-form-drawer" id="walkin-form">
+                  <div class="inline-form-grid">
+                    <div class="field-group">
+                      <label class="field-label" for="walkin-name">Customer name</label>
+                      <input class="field-control" type="text" id="walkin-name" required placeholder="Customer name" />
+                    </div>
+                    <div class="field-group">
+                      <label class="field-label" for="walkin-phone">Phone</label>
+                      <input class="field-control tabular" type="tel" id="walkin-phone" required placeholder="10-digit mobile" />
+                    </div>
+                    <div class="field-group">
+                      <label class="field-label" for="walkin-car">Car make &amp; model</label>
+                      <input class="field-control" type="text" id="walkin-car" required placeholder="e.g. Maruti Baleno" />
+                    </div>
+                    <div class="field-group">
+                      <label class="field-label" for="walkin-size">Car size</label>
+                      <select class="field-control" id="walkin-size">
+                        <option value="1">Hatchback</option>
+                        <option value="1.2">Sedan</option>
+                        <option value="1.5">SUV / MUV</option>
+                      </select>
+                    </div>
+                    <div class="field-group">
+                      <label class="field-label" for="walkin-service">Service</label>
+                      <select class="field-control" id="walkin-service"></select>
+                    </div>
+                    <div class="field-group">
+                      <label class="field-label" for="walkin-date">Date</label>
+                      <input class="field-control tabular" type="date" id="walkin-date" required />
+                    </div>
+                    <div class="field-group">
+                      <label class="field-label" for="walkin-slot">Time slot</label>
+                      <select class="field-control tabular" id="walkin-slot"></select>
+                    </div>
+                    <div>
+                      <button type="submit" class="btn-primary btn-sm">Save appointment</button>
+                    </div>
+                  </div>
+                </form>
+
+                <div class="admin-toolbar">
+                  <input
+                    type="search"
+                    class="admin-search-input"
+                    id="booking-search-input"
+                    placeholder="Search customer, phone, or car model..."
+                    aria-label="Search bookings"
+                  />
+                  <span class="admin-user-email tabular" id="bookings-showing-count"></span>
+                </div>
+
+                <div class="table-scroll" id="bookings-table-wrap"></div>
+              </div>
+            </div>
+
+            <!-- Inventory & Sales Tab -->
+            <div id="tab-inventory" class="admin-tab-pane" style="display: none;">
+              <div class="admin-panel-box" style="margin-bottom: 1.5rem;">
+                <div class="admin-panel-head">
+                  <h2>Record part sale</h2>
+                  <button type="button" class="btn-outline btn-sm" id="toggle-add-part-btn">Add inventory item</button>
+                </div>
+
+                <form class="inline-form-drawer" id="add-part-form">
+                  <div class="inline-form-grid">
+                    <div class="field-group">
+                      <label class="field-label" for="new-part-sku">SKU</label>
+                      <input class="field-control" type="text" id="new-part-sku" required placeholder="GH-BRK-02" />
+                    </div>
+                    <div class="field-group">
+                      <label class="field-label" for="new-part-name">Part name</label>
+                      <input class="field-control" type="text" id="new-part-name" required placeholder="Ceramic brake pad set" />
+                    </div>
+                    <div class="field-group">
+                      <label class="field-label" for="new-part-brand">Brand</label>
+                      <input class="field-control" type="text" id="new-part-brand" required placeholder="Brembo" />
+                    </div>
+                    <div class="field-group">
+                      <label class="field-label" for="new-part-cat">Category</label>
+                      <input class="field-control" type="text" id="new-part-cat" required placeholder="Brakes" />
+                    </div>
+                    <div class="field-group">
+                      <label class="field-label" for="new-part-price">Unit price (₹)</label>
+                      <input class="field-control tabular" type="number" id="new-part-price" min="1" required placeholder="1850" />
+                    </div>
+                    <div class="field-group">
+                      <label class="field-label" for="new-part-qty">Initial stock</label>
+                      <input class="field-control tabular" type="number" id="new-part-qty" min="0" required value="10" />
+                    </div>
+                    <div>
+                      <button type="submit" class="btn-primary btn-sm">Add part</button>
+                    </div>
+                  </div>
+                </form>
+
+                <form class="admin-toolbar" id="record-sale-form">
+                  <div class="inline-form-grid" style="width: 100%;">
+                    <div class="field-group">
+                      <label class="field-label" for="sale-part-select">Select spare part</label>
+                      <select class="field-control" id="sale-part-select" required></select>
+                    </div>
+                    <div class="field-group">
+                      <label class="field-label" for="sale-qty">Quantity</label>
+                      <input class="field-control tabular" type="number" id="sale-qty" min="1" value="1" required />
+                    </div>
+                    <div class="field-group">
+                      <label class="field-label" for="sale-car-note">Vehicle / customer (optional)</label>
+                      <input class="field-control" type="text" id="sale-car-note" placeholder="e.g. UP32 Swift · Rohan" />
+                    </div>
+                    <div>
+                      <button type="submit" class="btn-primary">Record sale</button>
+                    </div>
+                  </div>
+                </form>
+                <div class="confirmation-banner" id="sale-feedback" style="margin: 0 1.25rem 1rem;" role="status" aria-live="polite"></div>
+              </div>
+
+              <div class="overview-split">
+                <div class="admin-panel-box">
+                  <div class="admin-panel-head">
+                    <h2>Parts inventory</h2>
+                  </div>
+                  <div class="table-scroll" id="inventory-table-wrap"></div>
+                </div>
+
+                <div class="admin-panel-box">
+                  <div class="admin-panel-head">
+                    <h2>Parts sales ledger</h2>
+                  </div>
+                  <div class="table-scroll" id="sales-table-wrap"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Supabase Setup Tab -->
+            <div id="tab-setup" class="admin-tab-pane" style="display: none;">
+              <div class="admin-panel-box">
+                <div class="admin-panel-head">
+                  <h2>Supabase connection &amp; database schema</h2>
+                  <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
+                    <button type="button" class="btn-outline btn-sm" id="copy-sql-btn">Copy SQL script</button>
+                    <button type="button" class="btn-primary btn-sm" id="seed-sample-btn">Seed sample data</button>
+                  </div>
+                </div>
+                <div class="setup-status-grid" id="setup-status-grid"></div>
+                <div style="padding: 0 1.25rem 1.25rem;">
+                  <p class="form-hint" style="margin-bottom: 0.65rem;">
+                    Paste this SQL into your Supabase project's <strong>SQL Editor</strong> and click <strong>Run</strong> to create the <code>bookings</code>, <code>inventory_items</code>, and <code>inventory_sales</code> tables with Row Level Security:
+                  </p>
+                  <textarea class="sql-code-box" id="supabase-sql-box" readonly></textarea>
+                  <div class="confirmation-banner" id="setup-feedback" role="status" aria-live="polite"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <script>
       (function () {
         "use strict";
+
+        const SUPABASE_URL = "https://tqrrxkpqpqgjypmpbewm.supabase.co";
+        const SUPABASE_KEY = "sb_publishable_or4FSk43uEG6iCGHOBz5cw_aMGOIYS4";
+        const SESSION_STORAGE_KEY = "gearhouse_supabase_session";
 
         const SERVICES = [
           {
@@ -1559,8 +2915,206 @@
           }
         ];
 
+        const EV_SERVICES = [
+          {
+            id: "ev-hv-health-check",
+            name: "HV battery health & SoH scan",
+            price: 1499,
+            description:
+              "Cell-voltage balance check, State of Health (SoH) percentage printout, BMS fault code scan, and DC fast-charge thermal log review."
+          },
+          {
+            id: "ev-thermal-coolant",
+            name: "Battery thermal & coolant flush",
+            price: 2299,
+            description:
+              "Low-conductivity EV battery coolant bleed, chiller loop pressure test, and radiator fan check for peak Lucknow summer heat."
+          },
+          {
+            id: "ev-regen-brakes",
+            name: "Regenerative brake & caliper service",
+            price: 1699,
+            description:
+              "Anti-rust caliper slide-pin lubrication, pad wear inspection, and DOT 4 LV brake fluid moisture flush for low-use EV rotors."
+          },
+          {
+            id: "ev-ac-reduction-gear",
+            name: "EV AC & reduction gear oil",
+            price: 1999,
+            description:
+              "Dielectric electric compressor oil inspection, cabin HEPA filter replacement, and single-speed reduction gearbox oil top-up."
+          }
+        ];
+
+        const ALL_SERVICES = [...SERVICES, ...EV_SERVICES];
+
+        const EV_PLATFORMS = {
+          tata: {
+            serviceId: "ev-hv-health-check",
+            sizeValue: "1",
+            note: "Recommended for Nexon EV, Tiago EV & XUV400: HV battery health & SoH scan before summer or long highway trips.",
+            buttonLabel: "Book HV battery scan"
+          },
+          mg: {
+            serviceId: "ev-thermal-coolant",
+            sizeValue: "1.5",
+            note: "Recommended for MG ZS EV, Kona & Ioniq: Battery thermal & low-conductivity coolant flush to protect peak fast-charging.",
+            buttonLabel: "Book EV coolant flush"
+          },
+          byd: {
+            serviceId: "ev-regen-brakes",
+            sizeValue: "1.2",
+            note: "Recommended for BYD Atto 3, e6 & Tigor XPRES-T: Regenerative brake caliper lubrication and DOT 4 LV moisture flush.",
+            buttonLabel: "Book EV brake service"
+          }
+        };
+
+        const SIZE_LABELS = {
+          "1": "Hatchback",
+          "1.2": "Sedan",
+          "1.5": "SUV / MUV"
+        };
+
+        const TIME_SLOTS = [
+          {
+            id: "09:00-10:30",
+            label: "09:00 am – 10:30 am",
+            startMinutes: 9 * 60,
+            title: "Early drop-off",
+            note: "Best for same-day periodic service and brake jobs.",
+            saturdayAvailable: true
+          },
+          {
+            id: "10:30-12:00",
+            label: "10:30 am – 12:00 pm",
+            startMinutes: 10 * 60 + 30,
+            title: "Mid-morning bay",
+            note: "Periodic service, AC recharge, and suspension checks.",
+            saturdayAvailable: true
+          },
+          {
+            id: "12:00-13:30",
+            label: "12:00 pm – 01:30 pm",
+            startMinutes: 12 * 60,
+            title: "Midday express bay",
+            note: "Tyre alignment, balancing, and battery replacement.",
+            saturdayAvailable: true
+          },
+          {
+            id: "14:00-15:30",
+            label: "02:00 pm – 03:30 pm",
+            startMinutes: 14 * 60,
+            title: "Afternoon bay",
+            note: "Engine OBD diagnostics, AC coil clean, and brake bleed.",
+            saturdayAvailable: true
+          },
+          {
+            id: "15:30-17:00",
+            label: "03:30 pm – 05:00 pm",
+            startMinutes: 15 * 60 + 30,
+            title: "Late afternoon bay",
+            note: "Express inspection, tyres, and battery load tests.",
+            saturdayAvailable: true
+          },
+          {
+            id: "17:00-18:30",
+            label: "05:00 pm – 06:30 pm",
+            startMinutes: 17 * 60,
+            title: "Evening drop-off",
+            note: "Mon–Fri only. Quick repairs and overnight bay check-in.",
+            saturdayAvailable: false
+          }
+        ];
+
+        const SETUP_SQL = `-- Run this in your Supabase SQL Editor (Project: tqrrxkpqpqgjypmpbewm)
+
+CREATE TABLE IF NOT EXISTS public.bookings (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  customer_name text NOT NULL,
+  phone text NOT NULL,
+  car_model text NOT NULL,
+  car_size text NOT NULL DEFAULT 'Hatchback',
+  service_id text NOT NULL,
+  service_name text NOT NULL,
+  estimated_price integer NOT NULL,
+  final_price integer,
+  preferred_date date NOT NULL,
+  time_slot text,
+  message text,
+  status text NOT NULL DEFAULT 'Pending',
+  created_at timestamptz NOT NULL DEFAULT now()
+);
+
+ALTER TABLE public.bookings ADD COLUMN IF NOT EXISTS time_slot text;
+
+CREATE TABLE IF NOT EXISTS public.inventory_items (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  sku text UNIQUE NOT NULL,
+  part_name text NOT NULL,
+  brand text NOT NULL,
+  category text NOT NULL,
+  unit_price integer NOT NULL,
+  stock_qty integer NOT NULL DEFAULT 0,
+  reorder_level integer NOT NULL DEFAULT 5,
+  updated_at timestamptz NOT NULL DEFAULT now()
+);
+
+CREATE TABLE IF NOT EXISTS public.inventory_sales (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  part_id uuid REFERENCES public.inventory_items(id) ON DELETE SET NULL,
+  part_name text NOT NULL,
+  sku text NOT NULL,
+  quantity integer NOT NULL,
+  unit_price integer NOT NULL,
+  total_amount integer NOT NULL,
+  customer_car text,
+  sold_at timestamptz NOT NULL DEFAULT now()
+);
+
+ALTER TABLE public.bookings ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.inventory_items ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.inventory_sales ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "Public can create bookings" ON public.bookings;
+CREATE POLICY "Public can create bookings"
+  ON public.bookings FOR INSERT
+  TO anon, authenticated
+  WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Authenticated admins manage bookings" ON public.bookings;
+CREATE POLICY "Authenticated admins manage bookings"
+  ON public.bookings FOR ALL
+  TO authenticated
+  USING (true)
+  WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Authenticated admins manage inventory" ON public.inventory_items;
+CREATE POLICY "Authenticated admins manage inventory"
+  ON public.inventory_items FOR ALL
+  TO authenticated
+  USING (true)
+  WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Authenticated admins manage sales" ON public.inventory_sales;
+CREATE POLICY "Authenticated admins manage sales"
+  ON public.inventory_sales FOR ALL
+  TO authenticated
+  USING (true)
+  WITH CHECK (true);
+
+INSERT INTO public.inventory_items (sku, part_name, brand, category, unit_price, stock_qty, reorder_level)
+VALUES
+  ('GH-BRK-01', 'Front brake pad set', 'TVS / Brembo', 'Brakes', 1650, 14, 5),
+  ('GH-BRK-02', 'Ventilated brake rotor (pair)', 'Brembo', 'Brakes', 3800, 6, 4),
+  ('GH-FLT-01', 'Synthetic oil filter', 'Bosch', 'Periodic service', 420, 26, 8),
+  ('GH-FLT-02', 'Engine air filter cartridge', 'Mahle', 'Periodic service', 650, 4, 6),
+  ('GH-ENG-01', 'Iridium spark plug (set of 4)', 'NGK', 'Ignition', 1480, 11, 5),
+  ('GH-BAT-01', '12V 45Ah maintenance-free battery', 'Amaron', 'Electrical', 4950, 5, 3),
+  ('GH-AC-01', 'R134a AC refrigerant canister', 'Honeywell', 'AC & cooling', 850, 15, 5)
+ON CONFLICT (sku) DO NOTHING;`;
+
         const formatRupees = (amount) =>
-          "₹" + Math.round(amount).toLocaleString("en-IN");
+          "₹" + Math.round(Number(amount) || 0).toLocaleString("en-IN");
 
         const getTodayISO = () => {
           const now = new Date();
@@ -1570,106 +3124,559 @@
           return `${year}-${month}-${day}`;
         };
 
-        // DOM references
+        const escapeHtml = (str) =>
+          String(str ?? "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#39;");
+
+        // Supabase Session & REST helpers
+        function loadSession() {
+          try {
+            const raw = localStorage.getItem(SESSION_STORAGE_KEY);
+            return raw ? JSON.parse(raw) : null;
+          } catch {
+            return null;
+          }
+        }
+
+        function saveSession(session) {
+          if (!session) {
+            localStorage.removeItem(SESSION_STORAGE_KEY);
+          } else {
+            localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(session));
+          }
+        }
+
+        async function supabaseAuthRequest(path, payload, token) {
+          const headers = {
+            apikey: SUPABASE_KEY,
+            "Content-Type": "application/json"
+          };
+          if (token) {
+            headers.Authorization = `Bearer ${token}`;
+          }
+          const res = await fetch(`${SUPABASE_URL}${path}`, {
+            method: "POST",
+            headers,
+            body: payload ? JSON.stringify(payload) : undefined
+          });
+          const text = await res.text();
+          let data = {};
+          try {
+            data = text ? JSON.parse(text) : {};
+          } catch {
+            data = { message: text };
+          }
+          if (!res.ok) {
+            throw new Error(data.error_description || data.msg || data.message || `Auth failed (${res.status})`);
+          }
+          return data;
+        }
+
+        async function refreshSessionIfNeeded() {
+          const session = loadSession();
+          if (!session || !session.refresh_token) return null;
+          try {
+            const refreshed = await supabaseAuthRequest(
+              "/auth/v1/token?grant_type=refresh_token",
+              { refresh_token: session.refresh_token }
+            );
+            saveSession(refreshed);
+            return refreshed;
+          } catch {
+            saveSession(null);
+            return null;
+          }
+        }
+
+        async function supabaseRest(tablePath, options = {}) {
+          const method = options.method || "GET";
+          const useAuth = options.useAuth !== false;
+          let session = useAuth ? loadSession() : null;
+
+          const makeRequest = async (accessToken) => {
+            const headers = {
+              apikey: SUPABASE_KEY,
+              "Content-Type": "application/json"
+            };
+            if (accessToken) {
+              headers.Authorization = `Bearer ${accessToken}`;
+            }
+            if (options.prefer) {
+              headers.Prefer = options.prefer;
+            }
+            const res = await fetch(`${SUPABASE_URL}/rest/v1/${tablePath}`, {
+              method,
+              headers,
+              body: options.body !== undefined ? JSON.stringify(options.body) : undefined
+            });
+            const text = await res.text();
+            let data = null;
+            try {
+              data = text ? JSON.parse(text) : null;
+            } catch {
+              data = { message: text };
+            }
+            return { res, data };
+          };
+
+          let { res, data } = await makeRequest(session?.access_token);
+          if (res.status === 401 && useAuth && session?.refresh_token) {
+            const refreshed = await refreshSessionIfNeeded();
+            if (refreshed?.access_token) {
+              ({ res, data } = await makeRequest(refreshed.access_token));
+            }
+          }
+
+          if (!res.ok) {
+            const err = new Error(
+              data?.message || data?.hint || `Supabase error (${res.status})`
+            );
+            err.code = data?.code || "";
+            err.status = res.status;
+            throw err;
+          }
+          return data;
+        }
+
+        // Public DOM references
         const servicesGrid = document.getElementById("services-grid");
+        const evGrid = document.getElementById("ev-grid");
+        const evRecNote = document.getElementById("ev-rec-note");
+        const evQuickBookBtn = document.getElementById("ev-quick-book-btn");
         const estSize = document.getElementById("est-size");
         const estService = document.getElementById("est-service");
         const estTotal = document.getElementById("est-total");
         const applyEstimateBtn = document.getElementById("apply-estimate-btn");
+
+        const slotsDateInput = document.getElementById("slots-date");
+        const slotsDayStatus = document.getElementById("slots-day-status");
+        const slotsGrid = document.getElementById("slots-grid");
+        const slotSelectedText = document.getElementById("slot-selected-text");
+        const slotProceedBtn = document.getElementById("slot-proceed-btn");
 
         const bookingForm = document.getElementById("booking-form");
         const bookName = document.getElementById("book-name");
         const bookPhone = document.getElementById("book-phone");
         const bookCar = document.getElementById("book-car");
         const bookDate = document.getElementById("book-date");
+        const bookSlot = document.getElementById("book-slot");
+        const bookSize = document.getElementById("book-size");
         const bookService = document.getElementById("book-service");
+        const bookMessage = document.getElementById("book-message");
+        const bookSubmitBtn = document.getElementById("book-submit-btn");
         const confirmationBanner = document.getElementById("booking-confirmation");
 
         const menuToggle = document.getElementById("menu-toggle");
         const mobileDrawer = document.getElementById("mobile-drawer");
 
-        // Populate service dropdowns from SERVICES array
+        // Admin DOM references
+        const adminAuthView = document.getElementById("admin-auth-view");
+        const adminWorkspaceView = document.getElementById("admin-workspace-view");
+        const adminAuthForm = document.getElementById("admin-auth-form");
+        const authHeading = document.getElementById("auth-heading");
+        const authEmailInput = document.getElementById("auth-email");
+        const authPasswordInput = document.getElementById("auth-password");
+        const authFeedback = document.getElementById("auth-feedback");
+        const authSubmitBtn = document.getElementById("auth-submit-btn");
+        const authModeToggle = document.getElementById("auth-mode-toggle");
+
+        const adminBreadcrumb = document.getElementById("admin-breadcrumb");
+        const adminUserEmail = document.getElementById("admin-user-email");
+        const adminRefreshBtn = document.getElementById("admin-refresh-btn");
+        const adminSignoutBtn = document.getElementById("admin-signout-btn");
+        const schemaWarningBanner = document.getElementById("schema-warning-banner");
+        const goToSetupBtn = document.getElementById("go-to-setup-btn");
+
+        const navCountAll = document.getElementById("nav-count-all");
+        const navCountPending = document.getElementById("nav-count-pending");
+        const kpiPending = document.getElementById("kpi-pending");
+        const kpiTotalBookings = document.getElementById("kpi-total-bookings");
+        const kpiRevenue = document.getElementById("kpi-revenue");
+        const kpiLowStock = document.getElementById("kpi-low-stock");
+
+        const overviewPendingList = document.getElementById("overview-pending-list");
+        const overviewSalesList = document.getElementById("overview-sales-list");
+        const bookingsPanelTitle = document.getElementById("bookings-panel-title");
+        const bookingSearchInput = document.getElementById("booking-search-input");
+        const bookingsShowingCount = document.getElementById("bookings-showing-count");
+        const bookingsTableWrap = document.getElementById("bookings-table-wrap");
+
+        const toggleWalkinBtn = document.getElementById("toggle-walkin-btn");
+        const walkinForm = document.getElementById("walkin-form");
+        const walkinName = document.getElementById("walkin-name");
+        const walkinPhone = document.getElementById("walkin-phone");
+        const walkinCar = document.getElementById("walkin-car");
+        const walkinSize = document.getElementById("walkin-size");
+        const walkinService = document.getElementById("walkin-service");
+        const walkinDate = document.getElementById("walkin-date");
+        const walkinSlot = document.getElementById("walkin-slot");
+
+        const toggleAddPartBtn = document.getElementById("toggle-add-part-btn");
+        const addPartForm = document.getElementById("add-part-form");
+        const recordSaleForm = document.getElementById("record-sale-form");
+        const salePartSelect = document.getElementById("sale-part-select");
+        const saleQtyInput = document.getElementById("sale-qty");
+        const saleCarNote = document.getElementById("sale-car-note");
+        const saleFeedback = document.getElementById("sale-feedback");
+        const inventoryTableWrap = document.getElementById("inventory-table-wrap");
+        const salesTableWrap = document.getElementById("sales-table-wrap");
+
+        const setupStatusGrid = document.getElementById("setup-status-grid");
+        const supabaseSqlBox = document.getElementById("supabase-sql-box");
+        const copySqlBtn = document.getElementById("copy-sql-btn");
+        const seedSampleBtn = document.getElementById("seed-sample-btn");
+        const setupFeedback = document.getElementById("setup-feedback");
+
+        let isSignUpMode = false;
+        let currentAdminTab = "overview";
+        let currentBookingStatusFilter = "All";
+        let bookingSearchTerm = "";
+        let adminState = {
+          bookings: [],
+          inventory: [],
+          sales: [],
+          missingTables: false,
+          tableStatus: {
+            bookings: "Checking...",
+            inventory_items: "Checking...",
+            inventory_sales: "Checking..."
+          }
+        };
+
+        // Populate service dropdowns from SERVICES and EV_SERVICES arrays
         function populateServiceDropdown(selectEl) {
           selectEl.innerHTML = "";
+
+          const coreGroup = document.createElement("optgroup");
+          coreGroup.label = "Workshop Services";
           SERVICES.forEach((service) => {
             const option = document.createElement("option");
             option.value = service.id;
             option.textContent = `${service.name} (From ${formatRupees(service.price)})`;
-            selectEl.appendChild(option);
+            coreGroup.appendChild(option);
           });
+          selectEl.appendChild(coreGroup);
+
+          const evGroup = document.createElement("optgroup");
+          evGroup.label = "Electric Vehicle Bay";
+          EV_SERVICES.forEach((service) => {
+            const option = document.createElement("option");
+            option.value = service.id;
+            option.textContent = `${service.name} (From ${formatRupees(service.price)})`;
+            evGroup.appendChild(option);
+          });
+          selectEl.appendChild(evGroup);
+        }
+
+        function buildServiceCard(service, index, actionLabel) {
+          const card = document.createElement("article");
+          card.className = "service-cell";
+
+          const indexLabel = String(index + 1).padStart(2, "0");
+
+          const top = document.createElement("div");
+          top.className = "service-top";
+
+          const idx = document.createElement("span");
+          idx.className = "service-index tabular";
+          idx.textContent = indexLabel;
+
+          const title = document.createElement("h3");
+          title.className = "service-name";
+          title.textContent = service.name;
+
+          const desc = document.createElement("p");
+          desc.className = "service-desc";
+          desc.textContent = service.description;
+
+          top.appendChild(idx);
+          top.appendChild(title);
+          top.appendChild(desc);
+
+          const foot = document.createElement("div");
+          foot.className = "service-foot";
+
+          const price = document.createElement("span");
+          price.className = "service-price tabular";
+          price.textContent = `From ${formatRupees(service.price)}`;
+
+          const actionBtn = document.createElement("button");
+          actionBtn.type = "button";
+          actionBtn.className = "service-action";
+          actionBtn.textContent = actionLabel;
+          actionBtn.addEventListener("click", () => {
+            estService.value = service.id;
+            bookService.value = service.id;
+            bookSize.value = estSize.value;
+            updateEstimate();
+            syncActivePartButton();
+            document.getElementById("booking").scrollIntoView({ behavior: "smooth" });
+            bookName.focus({ preventScroll: true });
+          });
+
+          foot.appendChild(price);
+          foot.appendChild(actionBtn);
+
+          card.appendChild(top);
+          card.appendChild(foot);
+          return card;
         }
 
         // Render 6-service workshop grid from SERVICES array
         function renderServicesGrid() {
           servicesGrid.innerHTML = "";
           SERVICES.forEach((service, index) => {
-            const card = document.createElement("article");
-            card.className = "service-cell";
+            servicesGrid.appendChild(buildServiceCard(service, index, "Select service"));
+          });
+        }
 
-            const indexLabel = String(index + 1).padStart(2, "0");
+        // Render 4-service EV bay grid from EV_SERVICES array
+        function renderEvServicesGrid() {
+          if (!evGrid) return;
+          evGrid.innerHTML = "";
+          EV_SERVICES.forEach((service, index) => {
+            evGrid.appendChild(buildServiceCard(service, index, "Select EV service"));
+          });
+        }
 
-            const top = document.createElement("div");
-            top.className = "service-top";
+        let activeEvPlatformKey = "tata";
+        function selectEvPlatform(key) {
+          const cfg = EV_PLATFORMS[key] || EV_PLATFORMS.tata;
+          activeEvPlatformKey = key;
+          document.querySelectorAll(".ev-pack-btn[data-ev-platform]").forEach((btn) => {
+            btn.classList.toggle("is-active", btn.dataset.evPlatform === key);
+          });
+          if (evRecNote) evRecNote.textContent = cfg.note;
+          if (evQuickBookBtn) evQuickBookBtn.textContent = cfg.buttonLabel;
+        }
 
-            const idx = document.createElement("span");
-            idx.className = "service-index tabular";
-            idx.textContent = indexLabel;
+        document.querySelectorAll(".ev-pack-btn[data-ev-platform]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            selectEvPlatform(btn.dataset.evPlatform);
+          });
+        });
 
-            const title = document.createElement("h3");
-            title.className = "service-name";
-            title.textContent = service.name;
-
-            const desc = document.createElement("p");
-            desc.className = "service-desc";
-            desc.textContent = service.description;
-
-            top.appendChild(idx);
-            top.appendChild(title);
-            top.appendChild(desc);
-
-            const foot = document.createElement("div");
-            foot.className = "service-foot";
-
-            const price = document.createElement("span");
-            price.className = "service-price tabular";
-            price.textContent = `From ${formatRupees(service.price)}`;
-
-            const actionBtn = document.createElement("button");
-            actionBtn.type = "button";
-            actionBtn.className = "service-action";
-            actionBtn.textContent = "Select service";
-            actionBtn.addEventListener("click", () => {
-              estService.value = service.id;
-              bookService.value = service.id;
-              updateEstimate();
-              document.getElementById("booking").scrollIntoView({ behavior: "smooth" });
-              bookName.focus({ preventScroll: true });
-            });
-
-            foot.appendChild(price);
-            foot.appendChild(actionBtn);
-
-            card.appendChild(top);
-            card.appendChild(foot);
-            servicesGrid.appendChild(card);
+        if (evQuickBookBtn) {
+          evQuickBookBtn.addEventListener("click", () => {
+            const cfg = EV_PLATFORMS[activeEvPlatformKey] || EV_PLATFORMS.tata;
+            estService.value = cfg.serviceId;
+            estSize.value = cfg.sizeValue;
+            bookService.value = cfg.serviceId;
+            bookSize.value = cfg.sizeValue;
+            updateEstimate();
+            syncActivePartButton();
+            document.getElementById("booking").scrollIntoView({ behavior: "smooth" });
+            bookName.focus({ preventScroll: true });
           });
         }
 
         // Update live estimator
         function updateEstimate() {
           const multiplier = parseFloat(estSize.value) || 1;
-          const selected = SERVICES.find((s) => s.id === estService.value) || SERVICES[0];
+          const selected = ALL_SERVICES.find((s) => s.id === estService.value) || SERVICES[0];
           const estimate = selected.price * multiplier;
           estTotal.textContent = formatRupees(estimate);
         }
 
-        // Set minimum date on date picker to today (no past dates)
-        function syncMinDate() {
-          const today = getTodayISO();
-          bookDate.min = today;
-          if (!bookDate.value || bookDate.value < today) {
-            bookDate.value = today;
+        // Time slots helpers
+        const addDaysISO = (baseIso, daysToAdd) => {
+          const [y, m, d] = baseIso.split("-").map(Number);
+          const dt = new Date(y, m - 1, d + daysToAdd);
+          return `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, "0")}-${String(dt.getDate()).padStart(2, "0")}`;
+        };
+
+        const getNextMondayISO = (baseIso) => {
+          const [y, m, d] = baseIso.split("-").map(Number);
+          const dt = new Date(y, m - 1, d);
+          const day = dt.getDay();
+          const diff = day === 0 ? 1 : 8 - day;
+          return addDaysISO(baseIso, diff);
+        };
+
+        const getDayOfWeek = (isoDate) => {
+          if (!isoDate) return 1;
+          const [y, m, d] = isoDate.split("-").map(Number);
+          return new Date(y, m - 1, d).getDay();
+        };
+
+        function getSlotAvailability(slot, isoDate) {
+          const dayOfWeek = getDayOfWeek(isoDate);
+          if (dayOfWeek === 0) {
+            return { available: false, reason: "Closed (Sunday)" };
           }
+          if (dayOfWeek === 6 && !slot.saturdayAvailable) {
+            return { available: false, reason: "Closed (Sat 5 pm)" };
+          }
+          const today = getTodayISO();
+          if (isoDate === today) {
+            const now = new Date();
+            const nowMinutes = now.getHours() * 60 + now.getMinutes();
+            if (nowMinutes >= slot.startMinutes + 30) {
+              return { available: false, reason: "Passed today" };
+            }
+          }
+          return { available: true, reason: "Available" };
+        }
+
+        function populateSlotDropdown(selectEl, isoDate) {
+          const previousVal = selectEl.value;
+          selectEl.innerHTML = "";
+
+          const dayOfWeek = getDayOfWeek(isoDate);
+          if (dayOfWeek === 0) {
+            const opt = document.createElement("option");
+            opt.value = "";
+            opt.textContent = "Workshop closed on Sundays — pick Mon–Sat";
+            selectEl.appendChild(opt);
+            return;
+          }
+
+          let firstAvailable = "";
+          TIME_SLOTS.forEach((slot) => {
+            const status = getSlotAvailability(slot, isoDate);
+            const opt = document.createElement("option");
+            opt.value = slot.label;
+            opt.disabled = !status.available;
+            opt.textContent = status.available
+              ? slot.label
+              : `${slot.label} (${status.reason})`;
+            if (status.available && !firstAvailable) {
+              firstAvailable = slot.label;
+            }
+            selectEl.appendChild(opt);
+          });
+
+          const prevOption = Array.from(selectEl.options).find(
+            (o) => o.value === previousVal && !o.disabled
+          );
+          if (prevOption) {
+            selectEl.value = prevOption.value;
+          } else if (firstAvailable) {
+            selectEl.value = firstAvailable;
+          } else if (selectEl.options.length > 0) {
+            selectEl.value = "";
+          }
+        }
+
+        function updateSlotSelectionBanner() {
+          const dateVal = slotsDateInput.value;
+          const selectedLabel = bookSlot.value;
+          if (getDayOfWeek(dateVal) === 0) {
+            slotSelectedText.innerHTML =
+              "The workshop is <strong>closed on Sundays</strong>. Pick Monday–Saturday to select a drop-off bay.";
+            slotProceedBtn.textContent = "Pick another date";
+            return;
+          }
+          if (!selectedLabel) {
+            slotSelectedText.innerHTML =
+              "No remaining bays left for <strong>today</strong>. Select Tomorrow or another upcoming date.";
+            slotProceedBtn.textContent = "Go to booking form";
+            return;
+          }
+          slotSelectedText.innerHTML = `Selected window: <strong>${escapeHtml(formatDisplayDate(dateVal))} · ${escapeHtml(selectedLabel)}</strong>`;
+          slotProceedBtn.textContent = "Book selected slot";
+        }
+
+        function renderTimeSlotsSection() {
+          const dateVal = slotsDateInput.value || getTodayISO();
+          const today = getTodayISO();
+          const tomorrow = addDaysISO(today, 1);
+          const nextMon = getNextMondayISO(today);
+
+          document.querySelectorAll(".slots-day-btn[data-slot-day]").forEach((btn) => {
+            const target =
+              btn.dataset.slotDay === "today"
+                ? today
+                : btn.dataset.slotDay === "tomorrow"
+                  ? tomorrow
+                  : nextMon;
+            btn.classList.toggle("is-active", dateVal === target);
+          });
+
+          const dayOfWeek = getDayOfWeek(dateVal);
+          if (dayOfWeek === 0) {
+            slotsDayStatus.textContent = `${formatDisplayDate(dateVal)} · Closed (Sunday)`;
+          } else if (dayOfWeek === 6) {
+            slotsDayStatus.textContent = `${formatDisplayDate(dateVal)} · Saturday hours (9:00 am – 5:00 pm)`;
+          } else {
+            slotsDayStatus.textContent = `${formatDisplayDate(dateVal)} · Open (9:00 am – 7:00 pm)`;
+          }
+
+          populateSlotDropdown(bookSlot, dateVal);
+
+          slotsGrid.innerHTML = "";
+          TIME_SLOTS.forEach((slot) => {
+            const status = getSlotAvailability(slot, dateVal);
+            const isSelected = status.available && bookSlot.value === slot.label;
+
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "slot-card" + (isSelected ? " is-selected" : "");
+            btn.disabled = !status.available;
+
+            const statusTagClass = status.available ? "status-Completed" : "status-Cancelled";
+            const statusText = isSelected ? "Selected" : status.reason;
+
+            btn.innerHTML = `
+              <div class="slot-card-top">
+                <span class="slot-time tabular">${escapeHtml(slot.label)}</span>
+                <span class="status-tag ${isSelected ? "status-Pending" : statusTagClass}">${escapeHtml(statusText)}</span>
+              </div>
+              <div>
+                <p class="slot-window-name">${escapeHtml(slot.title)}</p>
+                <p class="slot-window-note">${escapeHtml(slot.note)}</p>
+              </div>
+            `;
+
+            btn.addEventListener("click", () => {
+              if (!status.available) return;
+              bookDate.value = dateVal;
+              bookSlot.value = slot.label;
+              setFieldError(bookDate, "err-date", "");
+              setFieldError(bookSlot, "err-slot", "");
+              renderTimeSlotsSection();
+            });
+
+            slotsGrid.appendChild(btn);
+          });
+
+          updateSlotSelectionBanner();
+        }
+
+        function getFirstOpenBookableDateISO() {
+          const today = getTodayISO();
+          for (let offset = 0; offset < 7; offset += 1) {
+            const candidate = addDaysISO(today, offset);
+            const hasOpen = TIME_SLOTS.some((slot) => getSlotAvailability(slot, candidate).available);
+            if (hasOpen) {
+              return candidate;
+            }
+          }
+          return today;
+        }
+
+        // Set minimum date on date picker to today (no past dates) and pick first open day by default
+        function syncMinDate(forceDefaultDate = false) {
+          const today = getTodayISO();
+          const defaultOpenDate = getFirstOpenBookableDateISO();
+          bookDate.min = today;
+          if (forceDefaultDate || !bookDate.value || bookDate.value < today) {
+            bookDate.value = defaultOpenDate;
+          }
+          slotsDateInput.min = today;
+          if (forceDefaultDate || !slotsDateInput.value || slotsDateInput.value < today) {
+            slotsDateInput.value = bookDate.value;
+          }
+          walkinDate.min = today;
+          if (forceDefaultDate || !walkinDate.value || walkinDate.value < today) {
+            walkinDate.value = defaultOpenDate;
+          }
+          populateSlotDropdown(walkinSlot, walkinDate.value);
+          renderTimeSlotsSection();
         }
 
         // Validation helpers
@@ -1701,7 +3708,9 @@
 
           const digits = bookPhone.value.replace(/\D/g, "");
           const isIndianMobile =
-            digits.length === 10 || (digits.length === 12 && digits.startsWith("91"));
+            digits.length === 10 ||
+            (digits.length === 11 && digits.startsWith("0")) ||
+            (digits.length === 12 && digits.startsWith("91"));
           if (!isIndianMobile) {
             setFieldError(
               bookPhone,
@@ -1733,11 +3742,23 @@
             setFieldError(bookDate, "err-date", "Past dates cannot be booked.");
             valid = false;
             firstInvalid = firstInvalid || bookDate;
+          } else if (getDayOfWeek(dateVal) === 0) {
+            setFieldError(bookDate, "err-date", "Workshop is closed on Sundays. Pick Mon–Sat.");
+            valid = false;
+            firstInvalid = firstInvalid || bookDate;
           } else {
             setFieldError(bookDate, "err-date", "");
           }
 
-          const selectedService = SERVICES.find((s) => s.id === bookService.value);
+          if (!bookSlot.value) {
+            setFieldError(bookSlot, "err-slot", "Please choose an available time slot.");
+            valid = false;
+            firstInvalid = firstInvalid || bookSlot;
+          } else {
+            setFieldError(bookSlot, "err-slot", "");
+          }
+
+          const selectedService = ALL_SERVICES.find((s) => s.id === bookService.value);
           if (!selectedService) {
             setFieldError(bookService, "err-service", "Please choose a service.");
             valid = false;
@@ -1754,7 +3775,8 @@
         }
 
         function formatDisplayDate(isoDate) {
-          const parts = isoDate.split("-");
+          if (!isoDate) return "";
+          const parts = String(isoDate).split("T")[0].split("-");
           if (parts.length !== 3) return isoDate;
           const dateObj = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
           return dateObj.toLocaleDateString("en-IN", {
@@ -1764,12 +3786,61 @@
           });
         }
 
-        // Event bindings
-        estSize.addEventListener("change", updateEstimate);
-        estService.addEventListener("change", updateEstimate);
+        // Public Event bindings
+        slotsDateInput.addEventListener("change", () => {
+          const today = getTodayISO();
+          if (!slotsDateInput.value || slotsDateInput.value < today) {
+            slotsDateInput.value = today;
+          }
+          bookDate.value = slotsDateInput.value;
+          setFieldError(bookDate, "err-date", "");
+          renderTimeSlotsSection();
+        });
+
+        document.querySelectorAll(".slots-day-btn[data-slot-day]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const today = getTodayISO();
+            const target =
+              btn.dataset.slotDay === "today"
+                ? today
+                : btn.dataset.slotDay === "tomorrow"
+                  ? addDaysISO(today, 1)
+                  : getNextMondayISO(today);
+            slotsDateInput.value = target;
+            bookDate.value = target;
+            setFieldError(bookDate, "err-date", "");
+            renderTimeSlotsSection();
+          });
+        });
+
+        bookDate.addEventListener("change", () => {
+          if (bookDate.value && bookDate.value >= getTodayISO()) {
+            slotsDateInput.value = bookDate.value;
+            renderTimeSlotsSection();
+          }
+        });
+
+        bookSlot.addEventListener("change", () => {
+          setFieldError(bookSlot, "err-slot", "");
+          renderTimeSlotsSection();
+        });
+
+        walkinDate.addEventListener("change", () => {
+          populateSlotDropdown(walkinSlot, walkinDate.value || getTodayISO());
+        });
+
+        estSize.addEventListener("change", () => {
+          updateEstimate();
+          bookSize.value = estSize.value;
+        });
+        estService.addEventListener("change", () => {
+          updateEstimate();
+          syncActivePartButton();
+        });
 
         applyEstimateBtn.addEventListener("click", () => {
           bookService.value = estService.value;
+          bookSize.value = estSize.value;
           document.getElementById("booking").scrollIntoView({ behavior: "smooth" });
           bookName.focus({ preventScroll: true });
         });
@@ -1780,12 +3851,12 @@
           });
         });
 
-        // Clear individual field error on input
         [
           [bookName, "err-name"],
           [bookPhone, "err-phone"],
           [bookCar, "err-car"],
           [bookDate, "err-date"],
+          [bookSlot, "err-slot"],
           [bookService, "err-service"]
         ].forEach(([el, errId]) => {
           el.addEventListener("input", () => {
@@ -1795,9 +3866,36 @@
           });
         });
 
-        bookingForm.addEventListener("submit", (event) => {
+        async function insertBookingWithSlotFallback(payload, { useAuth = false } = {}) {
+          try {
+            return await supabaseRest("bookings", {
+              method: "POST",
+              body: payload,
+              prefer: "return=minimal",
+              useAuth
+            });
+          } catch (err) {
+            const msg = String(err.message || "");
+            if ((err.code === "PGRST204" || err.status === 400) && msg.includes("time_slot")) {
+              const fallbackPayload = { ...payload };
+              const slotTag = fallbackPayload.time_slot ? `[Slot: ${fallbackPayload.time_slot}]` : "";
+              delete fallbackPayload.time_slot;
+              fallbackPayload.message = [slotTag, fallbackPayload.message].filter(Boolean).join(" ") || null;
+              return await supabaseRest("bookings", {
+                method: "POST",
+                body: fallbackPayload,
+                prefer: "return=minimal",
+                useAuth
+              });
+            }
+            throw err;
+          }
+        }
+
+        // Public Booking Form Submit -> Inserts directly into Supabase public.bookings
+        bookingForm.addEventListener("submit", async (event) => {
           event.preventDefault();
-          confirmationBanner.classList.remove("is-visible");
+          confirmationBanner.classList.remove("is-visible", "is-error");
           confirmationBanner.textContent = "";
 
           if (!validateBookingForm()) {
@@ -1805,15 +3903,59 @@
           }
 
           const submittedName = bookName.value.trim();
-          const chosenService =
-            SERVICES.find((s) => s.id === bookService.value)?.name || "Car service";
-          const chosenDate = formatDisplayDate(bookDate.value);
+          const chosenServiceObj =
+            ALL_SERVICES.find((s) => s.id === bookService.value) || SERVICES[0];
+          const chosenDateISO = bookDate.value;
+          const chosenSlot = bookSlot.value;
+          const chosenDateDisplay = formatDisplayDate(chosenDateISO);
+          const sizeMultiplier = parseFloat(bookSize.value) || 1;
+          const sizeLabel = SIZE_LABELS[bookSize.value] || "Hatchback";
+          const estimatedPrice = Math.round(chosenServiceObj.price * sizeMultiplier);
 
-          confirmationBanner.textContent = `Thanks, ${submittedName}. Your ${chosenService} request for ${chosenDate} has been received. Our Gomti Nagar service desk will call shortly to confirm your slot.`;
-          confirmationBanner.classList.add("is-visible");
+          const payload = {
+            customer_name: submittedName,
+            phone: bookPhone.value.trim(),
+            car_model: bookCar.value.trim(),
+            car_size: sizeLabel,
+            service_id: chosenServiceObj.id,
+            service_name: chosenServiceObj.name,
+            estimated_price: estimatedPrice,
+            preferred_date: chosenDateISO,
+            time_slot: chosenSlot || null,
+            message: bookMessage.value.trim() || null,
+            status: "Pending"
+          };
 
-          bookingForm.reset();
-          syncMinDate();
+          bookSubmitBtn.disabled = true;
+          bookSubmitBtn.textContent = "Saving booking...";
+
+          try {
+            await insertBookingWithSlotFallback(payload, { useAuth: false });
+
+            confirmationBanner.textContent = `Thanks, ${submittedName}. Your ${chosenServiceObj.name} (${sizeLabel}, est. ${formatRupees(estimatedPrice)}) request for ${chosenDateDisplay} (${chosenSlot}) has been saved to our workshop schedule. Our Gomti Nagar desk will call shortly to confirm.`;
+            confirmationBanner.classList.add("is-visible");
+            confirmationBanner.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+            bookingForm.reset();
+            bookSize.value = estSize.value;
+            bookService.value = estService.value;
+            syncMinDate(true);
+          } catch (err) {
+            if (err.code === "PGRST205") {
+              confirmationBanner.textContent =
+                "Supabase is connected, but the 'bookings' table has not been created yet. Open the Admin portal → Supabase setup and run the SQL script in your Supabase SQL Editor.";
+            } else if (err.code === "42501") {
+              confirmationBanner.textContent =
+                "Supabase Row-Level Security blocked this booking insert. Open the Admin portal → Supabase setup and run the SQL policies in your Supabase SQL Editor.";
+            } else {
+              confirmationBanner.textContent = `Could not save booking to Supabase: ${err.message}`;
+            }
+            confirmationBanner.classList.add("is-visible", "is-error");
+            confirmationBanner.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          } finally {
+            bookSubmitBtn.disabled = false;
+            bookSubmitBtn.textContent = "Request booking";
+          }
         });
 
         // Mobile drawer toggle
@@ -1848,15 +3990,834 @@
           });
         });
 
-        estService.addEventListener("change", syncActivePartButton);
+        // Admin Shell Routing & Authentication
+        function openAdminShell() {
+          document.body.classList.add("is-admin-mode");
+          if (window.location.hash !== "#admin") {
+            history.replaceState(null, "", "#admin");
+          }
+          renderAuthOrWorkspace();
+          window.scrollTo(0, 0);
+        }
+
+        function closeAdminShell() {
+          document.body.classList.remove("is-admin-mode");
+          if (window.location.hash === "#admin") {
+            history.replaceState(null, "", "#top");
+          }
+          window.scrollTo(0, 0);
+        }
+
+        document.querySelectorAll('[data-open-admin="true"]').forEach((el) => {
+          el.addEventListener("click", (e) => {
+            e.preventDefault();
+            openAdminShell();
+          });
+        });
+
+        document.querySelectorAll('[data-close-admin="true"]').forEach((el) => {
+          el.addEventListener("click", (e) => {
+            e.preventDefault();
+            closeAdminShell();
+          });
+        });
+
+        window.addEventListener("hashchange", () => {
+          if (window.location.hash === "#admin") {
+            openAdminShell();
+          } else if (document.body.classList.contains("is-admin-mode")) {
+            document.body.classList.remove("is-admin-mode");
+          }
+        });
+
+        function renderAuthOrWorkspace() {
+          const session = loadSession();
+          if (session && session.access_token) {
+            adminAuthView.style.display = "none";
+            adminWorkspaceView.style.display = "grid";
+            adminUserEmail.textContent = session.user?.email || "Authenticated admin";
+            loadAdminData();
+          } else {
+            adminAuthView.style.display = "flex";
+            adminWorkspaceView.style.display = "none";
+          }
+        }
+
+        authModeToggle.addEventListener("click", () => {
+          isSignUpMode = !isSignUpMode;
+          authFeedback.classList.remove("is-visible", "is-error");
+          if (isSignUpMode) {
+            authHeading.textContent = "Create workshop admin account";
+            authSubmitBtn.textContent = "Create admin account";
+            authModeToggle.textContent = "Already have an account? Sign in";
+          } else {
+            authHeading.textContent = "Workshop admin sign in";
+            authSubmitBtn.textContent = "Sign in to admin";
+            authModeToggle.textContent = "Create admin account";
+          }
+        });
+
+        adminAuthForm.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          authFeedback.classList.remove("is-visible", "is-error");
+          const email = authEmailInput.value.trim();
+          const password = authPasswordInput.value;
+
+          if (!email || password.length < 6) {
+            authFeedback.textContent = "Enter a valid email and a password of at least 6 characters.";
+            authFeedback.classList.add("is-visible", "is-error");
+            return;
+          }
+
+          authSubmitBtn.disabled = true;
+          authSubmitBtn.textContent = isSignUpMode ? "Creating account..." : "Signing in...";
+
+          try {
+            if (isSignUpMode) {
+              const res = await supabaseAuthRequest("/auth/v1/signup", { email, password });
+              if (res.access_token) {
+                saveSession(res);
+                renderAuthOrWorkspace();
+              } else {
+                authFeedback.textContent =
+                  "Account created. Please check your email to confirm your address (or confirm the user in Supabase Auth → Users), then sign in.";
+                authFeedback.classList.add("is-visible");
+                isSignUpMode = false;
+                authHeading.textContent = "Workshop admin sign in";
+                authSubmitBtn.textContent = "Sign in to admin";
+                authModeToggle.textContent = "Create admin account";
+              }
+            } else {
+              const res = await supabaseAuthRequest("/auth/v1/token?grant_type=password", {
+                email,
+                password
+              });
+              saveSession(res);
+              adminAuthForm.reset();
+              renderAuthOrWorkspace();
+            }
+          } catch (err) {
+            authFeedback.textContent = err.message || "Authentication failed.";
+            authFeedback.classList.add("is-visible", "is-error");
+          } finally {
+            authSubmitBtn.disabled = false;
+            if (!isSignUpMode) {
+              authSubmitBtn.textContent = "Sign in to admin";
+            } else {
+              authSubmitBtn.textContent = "Create admin account";
+            }
+          }
+        });
+
+        adminSignoutBtn.addEventListener("click", async () => {
+          const session = loadSession();
+          if (session?.access_token) {
+            try {
+              await supabaseAuthRequest("/auth/v1/logout", null, session.access_token);
+            } catch {
+              // Ignore logout error if token already expired
+            }
+          }
+          saveSession(null);
+          renderAuthOrWorkspace();
+        });
+
+        // Admin Tabs
+        function switchAdminTab(tabName) {
+          currentAdminTab = tabName;
+          document.querySelectorAll(".admin-nav-btn[data-admin-tab]").forEach((btn) => {
+            btn.classList.toggle("is-active", btn.dataset.adminTab === tabName);
+          });
+
+          const tabOverview = document.getElementById("tab-overview");
+          const tabBookings = document.getElementById("tab-bookings");
+          const tabInventory = document.getElementById("tab-inventory");
+          const tabSetup = document.getElementById("tab-setup");
+
+          tabOverview.style.display = tabName === "overview" ? "block" : "none";
+          tabBookings.style.display =
+            tabName === "bookings" || tabName === "pending" ? "block" : "none";
+          tabInventory.style.display = tabName === "inventory" ? "block" : "none";
+          tabSetup.style.display = tabName === "setup" ? "block" : "none";
+
+          const labels = {
+            overview: "Overview",
+            bookings: "All bookings",
+            pending: "Pending bookings",
+            inventory: "Inventory & sales",
+            setup: "Supabase setup"
+          };
+          adminBreadcrumb.textContent = `Gearhouse Garage / Admin / ${labels[tabName] || "Overview"}`;
+
+          if (tabName === "pending") {
+            currentBookingStatusFilter = "Pending";
+            bookingsPanelTitle.textContent = "Pending bookings queue";
+          } else if (tabName === "bookings") {
+            if (currentBookingStatusFilter === "Pending") {
+              currentBookingStatusFilter = "All";
+            }
+            bookingsPanelTitle.textContent = "All workshop bookings";
+          }
+          syncFilterButtons();
+          renderBookingsTable();
+        }
+
+        document.querySelectorAll(".admin-nav-btn[data-admin-tab]").forEach((btn) => {
+          btn.addEventListener("click", () => switchAdminTab(btn.dataset.adminTab));
+        });
+
+        document.querySelectorAll("[data-switch-tab]").forEach((btn) => {
+          btn.addEventListener("click", () => switchAdminTab(btn.dataset.switchTab));
+        });
+
+        goToSetupBtn.addEventListener("click", () => switchAdminTab("setup"));
+
+        function syncFilterButtons() {
+          document.querySelectorAll("#booking-status-filters .filter-tab").forEach((btn) => {
+            btn.classList.toggle("is-active", btn.dataset.statusFilter === currentBookingStatusFilter);
+          });
+        }
+
+        document.querySelectorAll("#booking-status-filters .filter-tab").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            currentBookingStatusFilter = btn.dataset.statusFilter;
+            syncFilterButtons();
+            renderBookingsTable();
+          });
+        });
+
+        bookingSearchInput.addEventListener("input", () => {
+          bookingSearchTerm = bookingSearchInput.value.trim().toLowerCase();
+          renderBookingsTable();
+        });
+
+        // Fetch all admin tables from Supabase
+        async function loadAdminData() {
+          adminRefreshBtn.disabled = true;
+          adminRefreshBtn.textContent = "Loading...";
+
+          let missingAny = false;
+          const fetchTable = async (table, query) => {
+            try {
+              const rows = await supabaseRest(`${table}?${query}`);
+              adminState.tableStatus[table] = `Connected (${rows.length} rows)`;
+              return rows;
+            } catch (err) {
+              if (err.code === "PGRST205") {
+                missingAny = true;
+                adminState.tableStatus[table] = "Missing table (run SQL setup)";
+                return [];
+              }
+              adminState.tableStatus[table] = `Error: ${err.message}`;
+              return [];
+            }
+          };
+
+          const [bookings, inventory, sales] = await Promise.all([
+            fetchTable("bookings", "select=*&order=preferred_date.asc,created_at.desc"),
+            fetchTable("inventory_items", "select=*&order=part_name.asc"),
+            fetchTable("inventory_sales", "select=*&order=sold_at.desc&limit=50")
+          ]);
+
+          adminState.bookings = bookings;
+          adminState.inventory = inventory;
+          adminState.sales = sales;
+          adminState.missingTables = missingAny;
+
+          schemaWarningBanner.style.display = missingAny ? "flex" : "none";
+          renderAdminViews();
+
+          adminRefreshBtn.disabled = false;
+          adminRefreshBtn.textContent = "Refresh data";
+        }
+
+        adminRefreshBtn.addEventListener("click", loadAdminData);
+
+        function renderAdminViews() {
+          const pendingBookings = adminState.bookings.filter((b) => b.status === "Pending");
+          const activeBookings = adminState.bookings.filter((b) => b.status !== "Cancelled");
+          const serviceRevenue = activeBookings.reduce(
+            (sum, b) => sum + Number(b.final_price ?? b.estimated_price ?? 0),
+            0
+          );
+          const partsRevenue = adminState.sales.reduce(
+            (sum, s) => sum + Number(s.total_amount ?? 0),
+            0
+          );
+          const lowStockItems = adminState.inventory.filter(
+            (item) => Number(item.stock_qty) <= Number(item.reorder_level ?? 5)
+          );
+
+          navCountAll.textContent = adminState.bookings.length;
+          navCountPending.textContent = pendingBookings.length;
+
+          kpiPending.textContent = pendingBookings.length;
+          kpiTotalBookings.textContent = adminState.bookings.length;
+          kpiRevenue.textContent = formatRupees(serviceRevenue + partsRevenue);
+          kpiLowStock.textContent = lowStockItems.length;
+
+          renderOverviewLists(pendingBookings);
+          renderBookingsTable();
+          renderInventoryViews();
+          renderSetupStatus();
+        }
+
+        function statusClassName(status) {
+          return "status-" + String(status || "Pending").replace(/\s+/g, "");
+        }
+
+        function renderOverviewLists(pendingBookings) {
+          if (pendingBookings.length === 0) {
+            overviewPendingList.innerHTML =
+              '<div class="empty-state"><p>No pending bookings right now.</p></div>';
+          } else {
+            const rows = pendingBookings
+              .slice(0, 5)
+              .map(
+                (b) => `
+                <tr>
+                  <td class="tabular">${escapeHtml(formatDisplayDate(b.preferred_date))}</td>
+                  <td>
+                    <strong>${escapeHtml(b.customer_name)}</strong>
+                    <span class="table-sub tabular">${escapeHtml(b.phone)}</span>
+                  </td>
+                  <td>
+                    ${escapeHtml(b.service_name)}
+                    <span class="table-sub">${escapeHtml(b.car_model)}</span>
+                  </td>
+                  <td class="num-col tabular">${formatRupees(b.estimated_price)}</td>
+                  <td class="num-col">
+                    <button type="button" class="btn-primary btn-sm" data-quick-confirm="${escapeHtml(b.id)}">Confirm</button>
+                  </td>
+                </tr>`
+              )
+              .join("");
+
+            overviewPendingList.innerHTML = `
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Customer</th>
+                    <th>Service &amp; car</th>
+                    <th class="num-col">Estimate</th>
+                    <th class="num-col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>${rows}</tbody>
+              </table>`;
+
+            overviewPendingList.querySelectorAll("[data-quick-confirm]").forEach((btn) => {
+              btn.addEventListener("click", () => updateBookingStatus(btn.dataset.quickConfirm, "Confirmed"));
+            });
+          }
+
+          if (adminState.sales.length === 0) {
+            overviewSalesList.innerHTML =
+              '<div class="empty-state"><p>No inventory sales recorded yet.</p></div>';
+          } else {
+            const saleRows = adminState.sales
+              .slice(0, 5)
+              .map(
+                (s) => `
+                <tr>
+                  <td>
+                    <strong>${escapeHtml(s.part_name)}</strong>
+                    <span class="table-sub">${escapeHtml(s.customer_car || s.sku)}</span>
+                  </td>
+                  <td class="num-col tabular">×${Number(s.quantity)}</td>
+                  <td class="num-col tabular">${formatRupees(s.total_amount)}</td>
+                </tr>`
+              )
+              .join("");
+
+            overviewSalesList.innerHTML = `
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Part &amp; vehicle</th>
+                    <th class="num-col">Qty</th>
+                    <th class="num-col">Total</th>
+                  </tr>
+                </thead>
+                <tbody>${saleRows}</tbody>
+              </table>`;
+          }
+        }
+
+        function renderBookingsTable() {
+          const filtered = adminState.bookings.filter((b) => {
+            const matchesStatus =
+              currentBookingStatusFilter === "All" || b.status === currentBookingStatusFilter;
+            if (!matchesStatus) return false;
+            if (!bookingSearchTerm) return true;
+            const haystack = `${b.customer_name} ${b.phone} ${b.car_model} ${b.service_name}`.toLowerCase();
+            return haystack.includes(bookingSearchTerm);
+          });
+
+          bookingsShowingCount.textContent = `Showing ${filtered.length} of ${adminState.bookings.length} bookings`;
+
+          if (filtered.length === 0) {
+            bookingsTableWrap.innerHTML =
+              '<div class="empty-state"><p>No matching bookings found.</p></div>';
+            return;
+          }
+
+          const statuses = ["Pending", "Confirmed", "In Progress", "Completed", "Cancelled"];
+          const rowsHtml = filtered
+            .map((b) => {
+              const displayPrice = b.final_price ?? b.estimated_price;
+              const optionsHtml = statuses
+                .map(
+                  (st) =>
+                    `<option value="${st}" ${b.status === st ? "selected" : ""}>${st}</option>`
+                )
+                .join("");
+
+              return `
+                <tr>
+                  <td class="tabular">
+                    ${escapeHtml(formatDisplayDate(b.preferred_date))}
+                    ${b.time_slot ? `<span class="table-sub tabular">${escapeHtml(b.time_slot)}</span>` : ""}
+                  </td>
+                  <td>
+                    <strong>${escapeHtml(b.customer_name)}</strong>
+                    <span class="table-sub tabular">${escapeHtml(b.phone)}</span>
+                  </td>
+                  <td>
+                    ${escapeHtml(b.car_model)}
+                    <span class="table-sub">${escapeHtml(b.car_size || "Hatchback")}</span>
+                  </td>
+                  <td>
+                    ${escapeHtml(b.service_name)}
+                    ${b.message ? `<span class="table-sub">${escapeHtml(b.message)}</span>` : ""}
+                  </td>
+                  <td class="num-col tabular">
+                    <strong>${formatRupees(displayPrice)}</strong>
+                    <span class="table-sub">${b.final_price != null ? "Final" : "Est."}</span>
+                  </td>
+                  <td>
+                    <span class="status-tag ${statusClassName(b.status)}">${escapeHtml(b.status)}</span>
+                  </td>
+                  <td>
+                    <div class="row-actions">
+                      <select class="inline-select" aria-label="Change status for ${escapeHtml(b.customer_name)}" data-booking-status="${escapeHtml(b.id)}">
+                        ${optionsHtml}
+                      </select>
+                      <button type="button" class="btn-outline btn-sm btn-danger-outline" data-delete-booking="${escapeHtml(b.id)}">Delete</button>
+                    </div>
+                  </td>
+                </tr>`;
+            })
+            .join("");
+
+          bookingsTableWrap.innerHTML = `
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Customer</th>
+                  <th>Vehicle</th>
+                  <th>Service</th>
+                  <th class="num-col">Price</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>${rowsHtml}</tbody>
+            </table>`;
+
+          bookingsTableWrap.querySelectorAll("[data-booking-status]").forEach((sel) => {
+            sel.addEventListener("change", () =>
+              updateBookingStatus(sel.dataset.bookingStatus, sel.value)
+            );
+          });
+
+          bookingsTableWrap.querySelectorAll("[data-delete-booking]").forEach((btn) => {
+            btn.addEventListener("click", () => deleteBooking(btn.dataset.deleteBooking));
+          });
+        }
+
+        async function updateBookingStatus(bookingId, newStatus) {
+          try {
+            await supabaseRest(`bookings?id=eq.${encodeURIComponent(bookingId)}`, {
+              method: "PATCH",
+              body: { status: newStatus }
+            });
+            await loadAdminData();
+          } catch (err) {
+            schemaWarningBanner.style.display = "flex";
+            schemaWarningBanner.querySelector("span").textContent = `Could not update status: ${err.message}`;
+          }
+        }
+
+        async function deleteBooking(bookingId) {
+          try {
+            await supabaseRest(`bookings?id=eq.${encodeURIComponent(bookingId)}`, {
+              method: "DELETE"
+            });
+            await loadAdminData();
+          } catch (err) {
+            schemaWarningBanner.style.display = "flex";
+            schemaWarningBanner.querySelector("span").textContent = `Could not delete booking: ${err.message}`;
+          }
+        }
+
+        // Walk-in Booking inside Admin
+        toggleWalkinBtn.addEventListener("click", () => {
+          walkinForm.classList.toggle("is-open");
+        });
+
+        walkinForm.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const svc = ALL_SERVICES.find((s) => s.id === walkinService.value) || SERVICES[0];
+          const mult = parseFloat(walkinSize.value) || 1;
+          const payload = {
+            customer_name: walkinName.value.trim(),
+            phone: walkinPhone.value.trim(),
+            car_model: walkinCar.value.trim(),
+            car_size: SIZE_LABELS[walkinSize.value] || "Hatchback",
+            service_id: svc.id,
+            service_name: svc.name,
+            estimated_price: Math.round(svc.price * mult),
+            preferred_date: walkinDate.value,
+            time_slot: walkinSlot.value || null,
+            status: "Confirmed"
+          };
+
+          try {
+            await insertBookingWithSlotFallback(payload, { useAuth: true });
+            walkinForm.reset();
+            walkinForm.classList.remove("is-open");
+            syncMinDate(true);
+            await loadAdminData();
+          } catch (err) {
+            schemaWarningBanner.style.display = "flex";
+            schemaWarningBanner.querySelector("span").textContent = `Could not add booking: ${err.message}`;
+          }
+        });
+
+        // Inventory & Parts Sales Views
+        function renderInventoryViews() {
+          salePartSelect.innerHTML = "";
+          if (adminState.inventory.length === 0) {
+            const opt = document.createElement("option");
+            opt.value = "";
+            opt.textContent = "No parts in inventory yet";
+            salePartSelect.appendChild(opt);
+          } else {
+            adminState.inventory.forEach((item) => {
+              const opt = document.createElement("option");
+              opt.value = item.id;
+              opt.textContent = `${item.part_name} (${item.brand}) — ${formatRupees(item.unit_price)} · ${item.stock_qty} left`;
+              salePartSelect.appendChild(opt);
+            });
+          }
+
+          if (adminState.inventory.length === 0) {
+            inventoryTableWrap.innerHTML =
+              '<div class="empty-state"><p>No inventory parts found. Add an item or seed sample data in Supabase setup.</p></div>';
+          } else {
+            const invRows = adminState.inventory
+              .map((item) => {
+                const qty = Number(item.stock_qty);
+                const reorder = Number(item.reorder_level ?? 5);
+                let stockBadge = '<span class="status-tag status-Completed">In stock</span>';
+                if (qty <= 0) {
+                  stockBadge = '<span class="status-tag status-Cancelled">Out of stock</span>';
+                } else if (qty <= reorder) {
+                  stockBadge = '<span class="status-tag status-Pending">Low stock</span>';
+                }
+
+                return `
+                  <tr>
+                    <td class="tabular">${escapeHtml(item.sku)}</td>
+                    <td>
+                      <strong>${escapeHtml(item.part_name)}</strong>
+                      <span class="table-sub">${escapeHtml(item.brand)} · ${escapeHtml(item.category)}</span>
+                    </td>
+                    <td class="num-col tabular">${formatRupees(item.unit_price)}</td>
+                    <td class="num-col tabular">${qty}</td>
+                    <td>${stockBadge}</td>
+                    <td class="num-col">
+                      <button type="button" class="btn-outline btn-sm" data-restock-id="${escapeHtml(item.id)}">+5</button>
+                    </td>
+                  </tr>`;
+              })
+              .join("");
+
+            inventoryTableWrap.innerHTML = `
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>SKU</th>
+                    <th>Part &amp; brand</th>
+                    <th class="num-col">Price</th>
+                    <th class="num-col">Qty</th>
+                    <th>Status</th>
+                    <th class="num-col">Restock</th>
+                  </tr>
+                </thead>
+                <tbody>${invRows}</tbody>
+              </table>`;
+
+            inventoryTableWrap.querySelectorAll("[data-restock-id]").forEach((btn) => {
+              btn.addEventListener("click", async () => {
+                const item = adminState.inventory.find((i) => i.id === btn.dataset.restockId);
+                if (!item) return;
+                await supabaseRest(`inventory_items?id=eq.${encodeURIComponent(item.id)}`, {
+                  method: "PATCH",
+                  body: {
+                    stock_qty: Number(item.stock_qty) + 5,
+                    updated_at: new Date().toISOString()
+                  }
+                });
+                await loadAdminData();
+              });
+            });
+          }
+
+          if (adminState.sales.length === 0) {
+            salesTableWrap.innerHTML =
+              '<div class="empty-state"><p>No parts sales logged yet.</p></div>';
+          } else {
+            const sRows = adminState.sales
+              .map(
+                (s) => `
+                <tr>
+                  <td class="tabular">${escapeHtml(formatDisplayDate(s.sold_at))}</td>
+                  <td>
+                    <strong>${escapeHtml(s.part_name)}</strong>
+                    <span class="table-sub">${escapeHtml(s.customer_car || s.sku)}</span>
+                  </td>
+                  <td class="num-col tabular">${Number(s.quantity)}</td>
+                  <td class="num-col tabular">${formatRupees(s.total_amount)}</td>
+                </tr>`
+              )
+              .join("");
+
+            salesTableWrap.innerHTML = `
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Part &amp; vehicle</th>
+                    <th class="num-col">Qty</th>
+                    <th class="num-col">Total</th>
+                  </tr>
+                </thead>
+                <tbody>${sRows}</tbody>
+              </table>`;
+          }
+        }
+
+        toggleAddPartBtn.addEventListener("click", () => {
+          addPartForm.classList.toggle("is-open");
+        });
+
+        addPartForm.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          saleFeedback.classList.remove("is-visible", "is-error");
+          const payload = {
+            sku: document.getElementById("new-part-sku").value.trim().toUpperCase(),
+            part_name: document.getElementById("new-part-name").value.trim(),
+            brand: document.getElementById("new-part-brand").value.trim(),
+            category: document.getElementById("new-part-cat").value.trim(),
+            unit_price: Number(document.getElementById("new-part-price").value),
+            stock_qty: Number(document.getElementById("new-part-qty").value),
+            reorder_level: 5
+          };
+
+          try {
+            await supabaseRest("inventory_items", {
+              method: "POST",
+              body: payload
+            });
+            addPartForm.reset();
+            addPartForm.classList.remove("is-open");
+            saleFeedback.textContent = `Added ${payload.part_name} (${payload.sku}) to inventory.`;
+            saleFeedback.classList.add("is-visible");
+            await loadAdminData();
+          } catch (err) {
+            saleFeedback.textContent = `Could not add inventory item: ${err.message}`;
+            saleFeedback.classList.add("is-visible", "is-error");
+          }
+        });
+
+        recordSaleForm.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          saleFeedback.classList.remove("is-visible", "is-error");
+
+          const selectedId = salePartSelect.value;
+          const item = adminState.inventory.find((i) => i.id === selectedId);
+          const qty = Number(saleQtyInput.value);
+
+          if (!item) {
+            saleFeedback.textContent = "Select a valid spare part first.";
+            saleFeedback.classList.add("is-visible", "is-error");
+            return;
+          }
+          if (!Number.isInteger(qty) || qty < 1) {
+            saleFeedback.textContent = "Quantity must be at least 1.";
+            saleFeedback.classList.add("is-visible", "is-error");
+            return;
+          }
+          if (qty > Number(item.stock_qty)) {
+            saleFeedback.textContent = `Only ${item.stock_qty} units of ${item.part_name} are currently in stock.`;
+            saleFeedback.classList.add("is-visible", "is-error");
+            return;
+          }
+
+          const totalAmount = qty * Number(item.unit_price);
+
+          try {
+            await supabaseRest("inventory_sales", {
+              method: "POST",
+              body: {
+                part_id: item.id,
+                part_name: item.part_name,
+                sku: item.sku,
+                quantity: qty,
+                unit_price: Number(item.unit_price),
+                total_amount: totalAmount,
+                customer_car: saleCarNote.value.trim() || null
+              }
+            });
+
+            await supabaseRest(`inventory_items?id=eq.${encodeURIComponent(item.id)}`, {
+              method: "PATCH",
+              body: {
+                stock_qty: Number(item.stock_qty) - qty,
+                updated_at: new Date().toISOString()
+              }
+            });
+
+            saleCarNote.value = "";
+            saleQtyInput.value = "1";
+            saleFeedback.textContent = `Sale recorded: ${qty} × ${item.part_name} (${formatRupees(totalAmount)}). Stock updated.`;
+            saleFeedback.classList.add("is-visible");
+            await loadAdminData();
+          } catch (err) {
+            saleFeedback.textContent = `Could not record sale: ${err.message}`;
+            saleFeedback.classList.add("is-visible", "is-error");
+          }
+        });
+
+        // Supabase Setup View
+        function renderSetupStatus() {
+          supabaseSqlBox.value = SETUP_SQL;
+          const items = [
+            { name: "public.bookings", status: adminState.tableStatus.bookings },
+            { name: "public.inventory_items", status: adminState.tableStatus.inventory_items },
+            { name: "public.inventory_sales", status: adminState.tableStatus.inventory_sales }
+          ];
+          setupStatusGrid.innerHTML = items
+            .map((it) => {
+              const ok = String(it.status).startsWith("Connected");
+              return `
+                <div class="setup-status-item">
+                  <strong>${escapeHtml(it.name)}</strong>
+                  <span class="status-tag ${ok ? "status-Completed" : "status-Pending"}">${escapeHtml(it.status)}</span>
+                </div>`;
+            })
+            .join("");
+        }
+
+        copySqlBtn.addEventListener("click", async () => {
+          setupFeedback.classList.remove("is-visible", "is-error");
+          try {
+            await navigator.clipboard.writeText(SETUP_SQL);
+            setupFeedback.textContent = "SQL script copied to clipboard. Run it in Supabase SQL Editor, then click Refresh data.";
+            setupFeedback.classList.add("is-visible");
+          } catch {
+            supabaseSqlBox.select();
+            document.execCommand("copy");
+            setupFeedback.textContent = "SQL script selected and copied.";
+            setupFeedback.classList.add("is-visible");
+          }
+        });
+
+        seedSampleBtn.addEventListener("click", async () => {
+          setupFeedback.classList.remove("is-visible", "is-error");
+          seedSampleBtn.disabled = true;
+          seedSampleBtn.textContent = "Seeding...";
+
+          try {
+            const sampleParts = [
+              { sku: "GH-BRK-01", part_name: "Front brake pad set", brand: "TVS / Brembo", category: "Brakes", unit_price: 1650, stock_qty: 14, reorder_level: 5 },
+              { sku: "GH-BRK-02", part_name: "Ventilated brake rotor (pair)", brand: "Brembo", category: "Brakes", unit_price: 3800, stock_qty: 6, reorder_level: 4 },
+              { sku: "GH-FLT-01", part_name: "Synthetic oil filter", brand: "Bosch", category: "Periodic service", unit_price: 420, stock_qty: 26, reorder_level: 8 },
+              { sku: "GH-FLT-02", part_name: "Engine air filter cartridge", brand: "Mahle", category: "Periodic service", unit_price: 650, stock_qty: 4, reorder_level: 6 },
+              { sku: "GH-ENG-01", part_name: "Iridium spark plug (set of 4)", brand: "NGK", category: "Ignition", unit_price: 1480, stock_qty: 11, reorder_level: 5 },
+              { sku: "GH-BAT-01", part_name: "12V 45Ah maintenance-free battery", brand: "Amaron", category: "Electrical", unit_price: 4950, stock_qty: 5, reorder_level: 3 },
+              { sku: "GH-AC-01", part_name: "R134a AC refrigerant canister", brand: "Honeywell", category: "AC & cooling", unit_price: 850, stock_qty: 15, reorder_level: 5 }
+            ];
+
+            await supabaseRest("inventory_items?on_conflict=sku", {
+              method: "POST",
+              body: sampleParts,
+              prefer: "resolution=ignore-duplicates"
+            });
+
+            if (adminState.bookings.length === 0) {
+              const today = getTodayISO();
+              await supabaseRest("bookings", {
+                method: "POST",
+                body: [
+                  {
+                    customer_name: "Rohan Verma",
+                    phone: "9839012345",
+                    car_model: "Hyundai i20 Sportz",
+                    car_size: "Hatchback",
+                    service_id: "periodic-service",
+                    service_name: "Periodic service",
+                    estimated_price: 2499,
+                    preferred_date: today,
+                    message: "Requesting morning pick-up from Vibhuti Khand.",
+                    status: "Pending"
+                  },
+                  {
+                    customer_name: "Ananya Mishra",
+                    phone: "9415022189",
+                    car_model: "Honda City VX",
+                    car_size: "Sedan",
+                    service_id: "brake-repair",
+                    service_name: "Brake repair",
+                    estimated_price: 2279,
+                    preferred_date: today,
+                    message: "Front brake squeal when slowing down.",
+                    status: "Confirmed"
+                  }
+                ]
+              });
+            }
+
+            setupFeedback.textContent = "Sample workshop inventory and appointments seeded in Supabase.";
+            setupFeedback.classList.add("is-visible");
+            await loadAdminData();
+          } catch (err) {
+            setupFeedback.textContent = `Could not seed data: ${err.message}`;
+            setupFeedback.classList.add("is-visible", "is-error");
+          } finally {
+            seedSampleBtn.disabled = false;
+            seedSampleBtn.textContent = "Seed sample data";
+          }
+        });
 
         // Initialize page state
         populateServiceDropdown(estService);
         populateServiceDropdown(bookService);
+        populateServiceDropdown(walkinService);
         renderServicesGrid();
+        renderEvServicesGrid();
+        selectEvPlatform("tata");
         updateEstimate();
         syncActivePartButton();
-        syncMinDate();
+        syncMinDate(true);
+
+        if (window.location.hash === "#admin") {
+          openAdminShell();
+        }
       })();
     </script>
   </body>
